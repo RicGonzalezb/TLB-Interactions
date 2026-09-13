@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="tlbi">
+    <Package name="defusal">
+        <Container name="Board">
+            <Key ID="STR_tlbi_defusal_board_title">
+                <English>IED - RENDER SAFE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_board_subtitle">
+                <English>%1  ·  %2 conductors  ·  treat every one as live until you have proven otherwise</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_volts">
+                <English>TEST VOLTS</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_ohms">
+                <English>TEST CONT.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_cut">
+                <English>CUT</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_back_away">
+                <English>BACK AWAY</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_stage_excavate">
+                <English>1/3  EXCAVATE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_stage_tape">
+                <English>2/3  STRIP TAPE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_stage_test">
+                <English>3/3  TEST AND CUT</English>
+            </Key>
+        </Container>
+        <Container name="Meter">
+            <!-- Everything in this container is drawn on the LCD in the LCD14
+                 font, which is a segment-display face: plain ASCII only. -->
+            <Key ID="STR_tlbi_defusal_readout">
+                <English>C%1 %2  V %3  R %4</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_readout_none">
+                <English>-- CLIP TO A TAG --</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_meter_off">
+                <English>-- METER OFF --</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_meter_unknown">
+                <English>---</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_meter_ohm">
+                <English>OHM</English>
+            </Key>
+        </Container>
+        <Container name="Progress">
+            <Key ID="STR_tlbi_defusal_progress_brush">
+                <English>BRUSHING SOIL AWAY ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_tape">
+                <English>CUTTING THE TAPE ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_volts">
+                <English>MEASURING SUPPLY ON %1 ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_ohms">
+                <English>MEASURING CONTINUITY ON %1 ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_cut">
+                <English>CUTTING CONDUCTOR %1 ...</English>
+            </Key>
+        </Container>
+        <Container name="Messages">
+            <Key ID="STR_tlbi_defusal_msg_excavate">
+                <English>Soil is packed over the device. Click a clump to brush it away - each takes two passes.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_uncovered">
+                <English>Device uncovered. The wiring is bound under tape - cut it free.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_tape">
+                <English>The wiring is bound under tape. Click a strip to cut it away.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_exposed">
+                <English>Wiring exposed. Clip the meter to a tag.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_instructions">
+                <English>Test supply first. Continuity pushes current through the circuit - keep it off the firing line if you can prove it by elimination.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_no_selection">
+                <English>Clip the meter to a tag first.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_already_probed">
+                <English>Already measured on that range.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_already_cut">
+                <English>That conductor is already cut.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_strike">
+                <English>Dead end. The circuit held - but do not push it.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_defused">
+                <English>Firing line cut. Device is safe.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_armed">
+                <English>CIRCUIT COLLAPSED - GET CLEAR</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_msg_ohms_fired">
+                <English>The meter's test current went straight through the detonator.</English>
+            </Key>
+        </Container>
+        <Container name="Mine">
+            <Key ID="STR_tlbi_defusal_mine_title">
+                <English>MINE - RENDER SAFE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_subtitle">
+                <English>%1  ·  pressure-operated  ·  locate it by prodding before you dig anywhere near it</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_prod">
+                <English>PROD</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_dig">
+                <English>DIG</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_pin">
+                <English>SEAT PIN</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_stage_locate">
+                <English>1/2  LOCATE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_stage_pin">
+                <English>2/2  PIN THE FUZE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_prod">
+                <English>PRODDING AT AN ANGLE ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_dig">
+                <English>DIGGING ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_lcd_tool">
+                <English>TOOL %1 - CLICK THE SOIL</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_lcd_pin">
+                <English>SLIPS %1/%2 - HOLD SPACE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_msg_locate">
+                <English>Prod the soil to find the mine - a red flag means metal. Dig out the eight cells around it, never the one on top.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_msg_exposed">
+                <English>The mine is dug out and the fuze is clear. Click SEAT PIN, then hold Space to push the pin in.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_msg_plate_prod">
+                <English>The prod came down on the pressure plate.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_msg_plate_dig">
+                <English>You dug straight down onto the pressure plate.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_msg_plate_at">
+                <English>That was the pressure plate. An anti-tank mine will not fire under a hand - an anti-personnel mine would have.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_mine_msg_safe">
+                <English>Pin seated. The mine is safe to lift.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_safe">
+                <English>Wire cut. The device is safe.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_pin_gauge">
+                <English>HOLD SPACE - KEEP THE NEEDLE IN THE BAND</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_pin_msg_hold">
+                <English>Hold Space, or hold the button, to push the pin in. Ease off whenever the needle drifts toward the edge.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_pin_msg_slip">
+                <English>The pin slipped - %1 of %2 slips used.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_pin_msg_fired">
+                <English>The pin slipped once too often and the striker went.</English>
+            </Key>
+        </Container>
+        <Container name="Tripwire">
+            <Key ID="STR_tlbi_defusal_trip_title">
+                <English>TRIPWIRE - RENDER SAFE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_subtitle">
+                <English>%1  ·  victim-operated  ·  trace the whole wire before you touch it</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_tension">
+                <English>CHECK TENSION</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_btn_cutwire">
+                <English>CUT WIRE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_stage_trace">
+                <English>1/2  TRACE THE WIRE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_stage_work">
+                <English>2/2  PIN AND CUT</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_grass">
+                <English>PARTING THE GRASS ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_tension">
+                <English>FEELING FOR TENSION ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_progress_cutwire">
+                <English>CUTTING THE WIRE ...</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_lcd_trace">
+                <English>-- TRACE THE WIRE --</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_lcd_trip">
+                <English>TENSION %1  PINNED %2/%3</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_tension_unknown">
+                <English>???</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_tension_slack">
+                <English>SLACK</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_tension_taut">
+                <English>TAUT</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_trace">
+                <English>Part the grass along the wire. Find where it is anchored and every device it is attached to.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_traced">
+                <English>Wire traced end to end: %1 firing device(s). Check the tension before anything else.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_work">
+                <English>Pin every device, or prove the wire is slack - then cut. Click a device to select it for pinning.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_taut">
+                <English>Taut: a tension-release fuze. Cutting the wire before every device is pinned will fire it.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_slack">
+                <English>Slack: a pull fuze. Never pull it - but cutting the wire is safe.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_select">
+                <English>Click a device to select it first.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_pinned">
+                <English>Device pinned.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_trip_msg_cut_fired">
+                <English>The wire was under tension. Cutting it released the striker.</English>
+            </Key>
+        </Container>
+        <Container name="Types">
+            <Key ID="STR_tlbi_defusal_settings_sub_types">
+                <English>Interactive Defusal - Device types</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_settings_sub_mines">
+                <English>Interactive Defusal - Mines</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_settings_sub_trip">
+                <English>Interactive Defusal - Tripwires</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_classesIed">
+                <English>Always IED</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_classesIed_desc">
+                <English>Comma-separated ammo class names that always use the IED procedure. A parent class covers everything that inherits from it. Every explosive's class is written to the RPT when its board opens.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_classesMine">
+                <English>Always mine</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_classesMine_desc">
+                <English>Comma-separated ammo class names that always use the mine procedure. A parent class covers everything that inherits from it.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_classesTrip">
+                <English>Always tripwire</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_classesTrip_desc">
+                <English>Comma-separated ammo class names that always use the tripwire procedure. Checked before the other two lists. Anything in none of them is classified automatically by how it fires.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_prodTime">
+                <English>Prod time (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_prodTime_desc">
+                <English>How long one prod of one soil cell takes.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_digTime">
+                <English>Dig time (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_digTime_desc">
+                <English>How long it takes to dig one soil cell out.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_plateProdRisk">
+                <English>Prodding the pressure plate</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_plateProdRisk_desc">
+                <English>Chance a prod that lands on the pressure plate fires an anti-personnel mine. Anti-tank mines use a small fraction of this.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_pinTime">
+                <English>Pin push time (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_pinTime_desc">
+                <English>Seconds of steady holding it takes to seat a safety pin, for mines and tripwire devices.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_pinSlips">
+                <English>Pin slips allowed</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_pinSlips_desc">
+                <English>How many times a pin may slip on one device before the next slip fires it.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_grassTime">
+                <English>Part grass time (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_grassTime_desc">
+                <English>How long it takes to part one tuft of grass.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_tensionTime">
+                <English>Tension check time (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_tensionTime_desc">
+                <English>How long it takes to feel the wire for tension.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_branchChance">
+                <English>Branch to a second device</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_branchChance_desc">
+                <English>Chance a tripwire has a branch leading to a second firing device hidden in the grass.</English>
+            </Key>
+        </Container>
+        <Container name="Colours">
+            <Key ID="STR_tlbi_defusal_colour_red">
+                <English>RED</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_blue">
+                <English>BLUE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_yellow">
+                <English>YELLOW</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_green">
+                <English>GREEN</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_white">
+                <English>WHITE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_violet">
+                <English>VIOLET</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_orange">
+                <English>ORANGE</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_brown">
+                <English>BROWN</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_black">
+                <English>BLACK</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_colour_grey">
+                <English>GREY</English>
+            </Key>
+        </Container>
+        <Container name="Settings">
+            <Key ID="STR_tlbi_settings_category">
+                <English>TLB Interactions</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_settings_sub">
+                <English>Interactive Defusal</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_enabled">
+                <English>Replace ACE defusal</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_enabled_desc">
+                <English>Replaces ACE's defusal progress bar with the hands-on procedure for every mine and explosive. Turn off to fall back to stock ACE behaviour without unloading the mod.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_minWires">
+                <English>Minimum conductors</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_minWires_desc">
+                <English>Fewest conductors a device can be built with.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_maxWires">
+                <English>Maximum conductors</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_maxWires_desc">
+                <English>Most conductors a device can be built with. More conductors means more readings to take and more decoys to rule out.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_excavation">
+                <English>Devices are buried</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_excavation_desc">
+                <English>Devices start under soil that has to be brushed away before the tape can be reached. Turn off to start at the tape.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_autoClear">
+                <English>Auto-clear dirt and grass</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_autoClear_desc">
+                <English>The clearing work does itself while you watch: soil is brushed off an IED, the rim of a mine is dug out (never the plate, and no prodding needed), and the grass over a tripwire is parted. Tape, meter, pins and cuts stay manual.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_clearSpeed">
+                <English>Clearing speed</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_clearSpeed_desc">
+                <English>Speeds up brushing soil, prodding, digging, parting grass and cutting tape, by hand or automatic. 2 is twice as fast, 0.5 half as fast. The per-action times below are the base values.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_difficulty">
+                <English>Difficulty</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_difficulty_desc">
+                <English>Adjusts the settings below rather than replacing them. Easy: one conductor fewer, far lower risk from continuity tests and prodding a plate, a wider pin band, one extra slip, fewer tripwire branches. Hard and Expert: more conductors, higher risks, a narrower band, more branches - and Expert allows one slip fewer.</English>
+            </Key>
+            <Key ID="STR_tlbi_difficulty_easy">
+                <English>Easy</English>
+            </Key>
+            <Key ID="STR_tlbi_difficulty_normal">
+                <English>Normal</English>
+            </Key>
+            <Key ID="STR_tlbi_difficulty_hard">
+                <English>Hard</English>
+            </Key>
+            <Key ID="STR_tlbi_difficulty_expert">
+                <English>Expert</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_dirtTime">
+                <English>Brush time per pass (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_dirtTime_desc">
+                <English>How long one brush of a soil clump takes. Every clump takes two.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_tapeTime">
+                <English>Tape cut time (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_tapeTime_desc">
+                <English>How long it takes to cut one strip of tape away from the wiring.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_probeTime">
+                <English>Time per reading (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_probeTime_desc">
+                <English>How long the meter takes to settle on one reading. Readings are unlimited.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_ohmsRisk">
+                <English>Continuity test on the firing line</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_ohmsRisk_desc">
+                <English>Chance that putting the continuity meter on the firing line itself sends enough test current through the detonator to fire it. This is what rewards proving the firing line by elimination. 0% makes the meter completely safe.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_cutTime">
+                <English>Cut time (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_cutTime_desc">
+                <English>How long the snip takes once committed. The board cannot be closed during it.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_failure">
+                <English>Wrong conductor</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_failure_desc">
+                <English>What happens when the wrong conductor is cut.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_failure_instant">
+                <English>Detonate immediately</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_failure_countdown">
+                <English>Arm a short countdown</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_failure_onestrike">
+                <English>One spare cut, then detonate</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_countdown">
+                <English>Countdown length (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_countdown_desc">
+                <English>Fuse delay when 'Arm a short countdown' is selected - the window to get clear.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_timeLimit">
+                <English>Anti-tamper timer (s)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_timeLimit_desc">
+                <English>Seconds of hands-on time before a device detonates by itself. Time is banked, so backing off does not reset it. 0 disables it.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_aceExplode">
+                <English>Keep ACE explode-on-defuse</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_aceExplode_desc">
+                <English>Off by default: cutting the correct conductor is always safe, because the player earned it. Turn on to also roll ACE's own explode-on-defuse chance on a successful cut.</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

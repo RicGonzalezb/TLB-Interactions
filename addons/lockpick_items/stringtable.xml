@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="TLBInteractions">
+    <Package name="lockpick_items">
+        <Container name="Items">
+            <Key ID="STR_tlbi_lockpick_items_kit">
+                <English>Lock Pick Kit</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_items_kit_desc">
+                <English>Tension wrench, hook pick and rake. Picks locked doors; forgiving and never wears out.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_items_paperclip">
+                <English>Paperclip</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_items_paperclip_desc">
+                <English>Bent straight, it will pick a lock - badly. Bends on every mistake and snaps after a few.</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

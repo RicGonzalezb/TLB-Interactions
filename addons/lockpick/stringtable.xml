@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="tlbi">
+    <Package name="lockpick">
+        <Container name="Board">
+            <Key ID="STR_tlbi_lockpick_title">
+                <English>LOCKED DOOR - PICK THE LOCK</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_subtitle">
+                <English>%1 door  ·  %2  ·  %3-pin cylinder</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door_civil">
+                <English>Civilian</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door_military">
+                <English>Military</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door_reinforced">
+                <English>Reinforced</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_tool_kit">
+                <English>lock pick kit</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_tool_clip">
+                <English>paperclip</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_tech_pins">
+                <English>PIN TUMBLER</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_tech_rake">
+                <English>RAKE</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_tech_dial">
+                <English>SWEET SPOT</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_back">
+                <English>BACK AWAY</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_prevpin">
+                <English>&lt; PIN</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_nextpin">
+                <English>PIN &gt;</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_lift">
+                <English>LIFT (HOLD)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_rake">
+                <English>RAKE</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_tension">
+                <English>TENSION (HOLD)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_pickleft">
+                <English>&lt; PICK (HOLD)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_turn">
+                <English>TURN (HOLD)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_btn_pickright">
+                <English>PICK &gt; (HOLD)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_gauge_tension">
+                <English>TENSION</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_gauge_strain">
+                <English>STRAIN</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_lcd_pins">
+                <English>PIN %1/%2  SET %3/%4</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_lcd_rake">
+                <English>SET %1/%2  TENSION %3</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_lcd_dial">
+                <English>TURN %1  STRAIN %2</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_help_pins">
+                <English>A/D picks a pin, hold Space to lift. The binding pin lifts stiffly - let go when it reaches the shear line.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_help_rake">
+                <English>Hold Space for tension and keep the needle in the green band. Press R to rake while it is there.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_help_dial">
+                <English>A/D moves the pick. Hold Space to turn - the closer the pick is to the sweet spot, the further it turns. Don't force it.</English>
+            </Key>
+        </Container>
+        <Container name="Messages">
+            <Key ID="STR_tlbi_lockpick_action_kit">
+                <English>Pick lock (lock pick kit)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_action_clip">
+                <English>Pick lock (paperclip)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_glass">
+                <English>A glass door can't be picked.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_overset">
+                <English>Pushed past the shear line - the pins dropped.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_bound">
+                <English>Too much tension - the pins bound and slipped.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_strain">
+                <English>Forced it off the sweet spot - the plug sprang back.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_kit_slip">
+                <English>Start again.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_clip_bend">
+                <English>The paperclip bent (%1 of %2 before it snaps).</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_clip_snap">
+                <English>The paperclip snapped.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_status_open">
+                <English>Click - the plug turns.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_open">
+                <English>Lock picked. The door is unlocked.</English>
+            </Key>
+        </Container>
+        <Container name="Settings">
+            <Key ID="STR_tlbi_lockpick_settings_sub">
+                <English>Lockpicking</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_enabled">
+                <English>Interactive lockpicking</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_enabled_desc">
+                <English>Picking a locked door opens the lockpicking board. Off restores tsp_breach's own progress bar when it is loaded, and removes Pick lock from our Door menu.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_takeOverTsp">
+                <English>Take over tsp_breach picking</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_takeOverTsp_desc">
+                <English>When tsp_breach is loaded, its Use Lockpick and Use Paperclip door actions open this board instead of a progress bar and a dice roll.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_aceLockpick">
+                <English>ACE lockpick counts as a kit</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_aceLockpick_desc">
+                <English>Let ACE's vehicle Lockpick item pick doors as a lock pick kit, from the Door menu. tsp_breach's own actions only accept its own items.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_clipBends">
+                <English>Paperclip bends allowed</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_clipBends_desc">
+                <English>Mistakes a paperclip survives. The next one snaps it and removes it from the inventory.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_classesMilitary">
+                <English>Military buildings</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_classesMilitary_desc">
+                <English>Comma-separated building class names with harder locks. End a name with * to match every class starting with it. tsp_breach's own list is also used when it is loaded.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_classesReinforced">
+                <English>Reinforced buildings</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_classesReinforced_desc">
+                <English>Comma-separated building class names with the hardest locks. End a name with * to match every class starting with it.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_settings_sub_pins">
+                <English>Lockpicking - Pin tumbler</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_settings_sub_rake">
+                <English>Lockpicking - Rake</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_settings_sub_dial">
+                <English>Lockpicking - Sweet spot</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_level_0">
+                <English>Very easy</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_level_1">
+                <English>Easy</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_level_2">
+                <English>Normal</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_level_3">
+                <English>Hard</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_level_4">
+                <English>Expert</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_levelKit">
+                <English>Difficulty with a lock pick kit</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_levelClip">
+                <English>Difficulty with a paperclip</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_level_desc">
+                <English>How hard this technique is with this tool. Very easy is close to impossible to fail; Normal is the tuned kit default and Hard the tuned paperclip default. The sliders below scale whichever level is chosen, and military and reinforced doors tighten it further.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_oddsKit">
+                <English>How often with a lock pick kit</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_oddsClip">
+                <English>How often with a paperclip</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_odds_desc">
+                <English>Relative weight of this technique when a lock is picked with this tool, against the same setting on the other two technique pages. 0 means this tool never draws it.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsWindow">
+                <English>Shear-line window</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsWindow_desc">
+                <English>Scales how far either side of the shear line the binding pin can be released and still set. Higher is easier.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsLift">
+                <English>Binding pin lift speed</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsLift_desc">
+                <English>Scales how fast the binding pin rises while lifting. Lower gives more time to let go in the window.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsShake">
+                <English>Paperclip shake</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsShake_desc">
+                <English>Scales how much a paperclip wanders the pin on its own. 0 is as steady as a kit.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsExtra">
+                <English>Extra pins</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_pinsExtra_desc">
+                <English>Pins added to or removed from every lock picked with this technique, on top of the level and the door class. A lock always has 3 to 7.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeBand">
+                <English>Tension band width</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeBand_desc">
+                <English>Scales the green band the tension needle has to stay in. Higher is easier; the band never exceeds 90% of the gauge.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeDrift">
+                <English>Band drift</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeDrift_desc">
+                <English>Scales how fast the green band wanders. 0 keeps it still in the middle.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeChance">
+                <English>Pin set chance</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeChance_desc">
+                <English>Scales the chance a rake stroke inside the band sets a pin. Higher means fewer strokes.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeTension">
+                <English>Tension speed</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_rakeTension_desc">
+                <English>Scales how fast tension builds while held and eases off when released. Lower is easier to control.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_dialWidth">
+                <English>Sweet spot width</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_dialWidth_desc">
+                <English>Scales how wide the sweet spot is. Higher is easier.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_dialStrain">
+                <English>Strain tolerance</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_dialStrain_desc">
+                <English>Scales how long the plug can be forced before it springs back. Higher is easier.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_dialShake">
+                <English>Paperclip shake</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_dialShake_desc">
+                <English>Scales how much a paperclip wanders the pick on its own. 0 is as steady as a kit.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_settings_sub_doors">
+                <English>Lockpicking - Doors without tsp_breach</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_doorActions">
+                <English>Door interactions</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_doorActions_desc">
+                <English>When tsp_breach is not loaded, doors get ACE interactions - open, close, lock and unlock from inside, pick a lock from outside - and doors are locked at random. Switches itself off whenever tsp_breach is loaded, which then handles doors instead.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_lockHouses">
+                <English>Buildings with locked doors</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_lockHouses_desc">
+                <English>Chance a building has any locked doors at all. Every player sees the same doors locked.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_lockDoors">
+                <English>Locked doors in those buildings</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_lockDoors_desc">
+                <English>Chance each door of such a building is locked. Doors the mission has already locked or unlocked are left alone.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_lockBlacklist">
+                <English>Never lock these buildings</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_set_lockBlacklist_desc">
+                <English>Comma-separated building class names that are never locked at random. End a name with * to match every class starting with it.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door">
+                <English>Door</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door_open">
+                <English>Open</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door_close">
+                <English>Close</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door_unlock">
+                <English>Unlock</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_door_lock">
+                <English>Lock</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_locked">
+                <English>It's locked.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_unlocked">
+                <English>You unlock the door.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_lockedByHand">
+                <English>You lock the door.</English>
+            </Key>
+        </Container>
+    </Package>
+</Project>

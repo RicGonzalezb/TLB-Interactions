@@ -1,0 +1,25 @@
+# Build output
+/build/
+/release/
+
+# Other people's mods kept locally for reference only - never redistributed
+/Demo mod/
+
+# Intermediate images from the texture generators and layout previews
+/tools/.png/
+/tools/.png_items/
+/tools/.png_lockpick/
+/tools/.preview/
+
+# Packed and signed artefacts, and signing keys (only public keys in keys/)
+*.pbo
+*.bisign
+*.biprivatekey
+*.bikey
+!keys/*.bikey
+
+# Editor and OS clutter
+*.bak
+*.tmp
+Thumbs.db
+.vscode/

@@ -16,6 +16,10 @@
   <a href="docs/how-it-works.md">How it works</a>
 </p>
 
+<p align="center">
+  <img src="docs/images/ied.jpg" alt="The IED board: numbered cable tags, a taped trigger pack and the multimeter LCD" width="820">
+</p>
+
 ---
 
 ## What it is
@@ -44,6 +48,28 @@ it, TLB Interactions runs its own door menu and random door locking.
 
 Everything is configurable through CBA settings, down to separate difficulty
 levels for each lockpicking technique with each tool.
+
+## Screenshots
+
+**Before and after.** ACE's progress bar, and the board that replaces it.
+
+| Before: ACE's progress bar | After: the device in front of you |
+| --- | --- |
+| <img src="docs/images/before-ace.jpg" alt="ACE's defusal progress bar over an IED" width="400"> | <img src="docs/images/ied-buried.jpg" alt="A buried IED on the defusal board" width="400"> |
+
+**Defusal**
+
+| IED: testing the wiring | Mine: prodding and digging | Tripwire: traced to two devices |
+| --- | --- | --- |
+| <img src="docs/images/ied.jpg" alt="IED board at the test and cut stage" width="270"> | <img src="docs/images/mine.jpg" alt="Mine board with prod flags" width="270"> | <img src="docs/images/tripwire.jpg" alt="Tripwire board with a branch to a second device" width="270"> |
+
+**Lockpicking**
+
+| Pin tumbler, lock pick kit | Rake, paperclip | Sweet spot, paperclip |
+| --- | --- | --- |
+| <img src="docs/images/lockpick-pins.jpg" alt="Pin tumbler cut-away with two pins set" width="270"> | <img src="docs/images/lockpick-rake.jpg" alt="Rake with the tension gauge" width="270"> | <img src="docs/images/lockpick-sweetspot.jpg" alt="Sweet spot lock face with the strain gauge" width="270"> |
+
+<sub>Board images are rendered from the mod's own textures and board layout. In game the board opens over the game view.</sub>
 
 ## Requirements
 

@@ -82,6 +82,8 @@ when the board closes. Once the tension wrench comes out, set pins fall back.
 
 ## Pin tumbler
 
+<img src="images/lockpick-pins.jpg" alt="Pin tumbler cut-away with two pins set and the binding pin glinting" width="720">
+
 The cut-away shows a row of pin stacks. Each stack is a spring, a silver driver
 pin and a brass key pin; the lock turns when every split between driver and key
 pin sits at the **shear line**: the line between the brass plug and the steel
@@ -102,6 +104,8 @@ The LCD shows `PIN selected/total  SET set/total`.
 
 ## Rake
 
+<img src="images/lockpick-rake.jpg" alt="Rake with the tension gauge" width="720">
+
 The cut-away shows the rake in the keyway and a **tension gauge** top left: a
 needle and a **green band** that slowly drifts along the track.
 
@@ -117,6 +121,8 @@ needle and a **green band** that slowly drifts along the track.
 The LCD shows `SET set/total  TENSION percent`.
 
 ## Sweet spot
+
+<img src="images/lockpick-sweetspot.jpg" alt="Sweet spot lock face with the strain gauge" width="720">
 
 The lock face in the door, with the pick in the keyway and a **strain gauge**
 bottom right.
@@ -218,6 +224,10 @@ or lock are sent over the network.
 | Never lock these buildings | empty |
 
 Doors that already have a lock value (set by the mission, a script or a player) are never overwritten, and glass doors are never locked at random.
+
+---
+
+<sub>Board images are rendered from the mod's own textures and board layout. In game the board opens over the game view.</sub>
 
 ---
 

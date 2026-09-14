@@ -66,6 +66,8 @@ Every board shares the same layout:
 
 ## IED
 
+<img src="images/ied-buried.jpg" alt="A buried IED on the defusal board" width="720">
+
 An unmarked shell with a taped trigger pack, buried in soil. Three stages.
 
 ### 1. Excavate
@@ -84,6 +86,8 @@ strip across the numbered cable tags has to go before any conductor can be
 reached.
 
 ### 3. Test and cut
+
+<img src="images/ied.jpg" alt="IED board at the test and cut stage" width="720">
 
 Now the meter. The device has between **3 and 5 conductors** (more on harder
 settings), each with a numbered tag on the left.
@@ -124,6 +128,8 @@ When only one live conductor is left unexplained, it is the firing line. Cut it.
 ---
 
 ## Mine
+
+<img src="images/mine.jpg" alt="Mine board with prod flags and part of the rim dug" width="720">
 
 A pressure mine buried under a patch of soil: a grid of **11 × 4 cells**. The mine
 itself sits under a **3 × 3 block** of cells: its **pressure plate** is the centre
@@ -171,6 +177,8 @@ true of the real thing. Don't let that habit follow you onto an AP mine.
 ---
 
 ## Tripwire
+
+<img src="images/tripwire.jpg" alt="Tripwire board traced to two devices" width="720">
 
 A wire strung through grass from an anchor stake to a firing device. **Sometimes
 the wire branches to a second device** (30% of the time by default), and nothing
@@ -246,6 +254,10 @@ and the anti-tamper clock (when enabled) running out.
 
 The **anti-tamper clock** counts hands-on time only, and it is banked on the device:
 backing off pauses it, but coming back does not reset it.
+
+---
+
+<sub>Board images are rendered from the mod's own textures and board layout. In game the board opens over the game view.</sub>
 
 ---
 

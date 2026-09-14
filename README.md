@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3801718055"><strong>Steam Workshop</strong></a> ·
   <a href="docs/defusal.md">Defusal guide</a> ·
   <a href="docs/lockpicking.md">Lockpicking &amp; doors</a> ·
   <a href="docs/settings.md">All settings</a> ·
@@ -57,11 +58,18 @@ levels for each lockpicking technique with each tool.
 | --- | --- |
 | <img src="docs/images/before-ace.jpg" alt="ACE's defusal progress bar over an IED" width="400"> | <img src="docs/images/ied-buried.jpg" alt="A buried IED on the defusal board" width="400"> |
 
-**Defusal**
+**IED**, from buried to tested
 
-| IED: testing the wiring | Mine: prodding and digging | Tripwire: traced to two devices |
+| 1. Buried | 2. Soil cleared, tape on | 3. Every conductor tested |
 | --- | --- | --- |
-| <img src="docs/images/ied.jpg" alt="IED board at the test and cut stage" width="270"> | <img src="docs/images/mine.jpg" alt="Mine board with prod flags" width="270"> | <img src="docs/images/tripwire.jpg" alt="Tripwire board with a branch to a second device" width="270"> |
+| <img src="docs/images/ied-buried.jpg" alt="A buried IED" width="270"> | <img src="docs/images/ied-tape.jpg" alt="IED with the soil brushed away and tape still binding the wiring" width="270"> | <img src="docs/images/ied-tested.jpg" alt="IED with every conductor tested and the firing line reading live and continuous" width="270"> |
+
+**Mine and tripwire**, before and after
+
+| Before | After |
+| --- | --- |
+| <img src="docs/images/mine.jpg" alt="Mine: prodding the soil, red flags on the rim" width="400"> | <img src="docs/images/mine-exposed.jpg" alt="Mine: rim dug out and fuze clear" width="400"> |
+| <img src="docs/images/tripwire-grass.jpg" alt="Tripwire hidden in the grass" width="400"> | <img src="docs/images/tripwire.jpg" alt="Tripwire traced to two devices" width="400"> |
 
 **Lockpicking**
 
@@ -82,7 +90,7 @@ levels for each lockpicking technique with each tool.
 
 ## Installation
 
-1. Get the `@TLB Interactions` mod from a TLB MilSim release.
+1. Subscribe on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3801718055).
 2. Load it together with CBA_A3 and ACE3.
 3. On a server, load it on the server **and** every client. All settings are
    server-forced, and the boards run on the client.

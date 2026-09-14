@@ -81,6 +81,8 @@ thin residue, the second clears it. When every clump is gone the stage moves on.
 
 ### 2. Strip the tape
 
+<img src="images/ied-tape.jpg" alt="IED with the soil brushed away and tape still binding the wiring" width="720">
+
 Three strips of tape bind the wiring. **Click a strip to cut it** (1.4 s). The
 strip across the numbered cable tags has to go before any conductor can be
 reached.
@@ -125,6 +127,8 @@ it fires it** (25% by default). Voltage tests are always safe.
 
 When only one live conductor is left unexplained, it is the firing line. Cut it.
 
+<img src="images/ied-tested.jpg" alt="Every conductor tested: conductor 3 reads live and continuous" width="720">
+
 ---
 
 ## Mine
@@ -161,6 +165,8 @@ the mine is ready for its pin.
 
 ### 3. Seat the pin
 
+<img src="images/mine-exposed.jpg" alt="Mine dug out with the fuze clear for the pin" width="720">
+
 Press **Seat pin** and hold it in with a steady hand. See
 [The steady hand](#the-steady-hand). When it seats, the mine is safe and ACE
 finishes the defusal.
@@ -185,6 +191,8 @@ the wire branches to a second device** (30% of the time by default), and nothing
 tells you so until the whole wire is traced.
 
 ### 1. Trace the whole wire
+
+<img src="images/tripwire-grass.jpg" alt="Tripwire hidden in the grass before tracing" width="720">
 
 **Click grass to part it** (0.7 s per tuft). The wire counts as traced once every
 tuft over it (main wire and any branch) is gone; the LCD then tells you how

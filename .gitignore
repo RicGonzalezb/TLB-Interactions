@@ -2,6 +2,9 @@
 /build/
 /release/
 
+# Steam Workshop gallery slides, uploaded to Steam rather than kept in the repo
+/workshop/
+
 # Other people's mods kept locally for reference only - never redistributed
 /Demo mod/
 

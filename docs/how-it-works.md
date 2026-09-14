@@ -45,7 +45,7 @@ path does. Every init step writes a line to the RPT.
 
 ## Replacing ACE's defusal
 
-The obvious approach — reassigning `ace_explosives_fnc_startDefuse` — does not
+The obvious approach, reassigning `ace_explosives_fnc_startDefuse`, does not
 work. ACE compiles its functions with `compileFinal`, so the assignment is
 rejected with `Attempt to override final function` in the RPT.
 
@@ -60,7 +60,7 @@ defuse action on both classes:
 [_class, 0, ["ACE_Defuse"]] call ace_interact_menu_fnc_removeActionFromClass;
 ```
 
-Add comes before remove — `addActionToClass` is what compiles the class's config
+Add comes before remove, because `addActionToClass` is what compiles the class's config
 menu, and ACE's own entry has to exist before it can be removed. The replacement
 copies ACE's display name, icon, condition and distances, so it is
 indistinguishable in the menu. Its statement opens the board; for AI, non-local
@@ -75,7 +75,7 @@ an option: it drops inherited members and the engine throws
 
 `fn_classify` decides the procedure for an explosive's ammo class:
 
-1. **Always tripwire** list, then **Always mine**, then **Always IED** — class
+1. **Always tripwire** list, then **Always mine**, then **Always IED**, matching class
    names or any parent class (`isKindOf`).
 2. Otherwise, automatically, by how it fires:
 
@@ -84,7 +84,7 @@ an option: it drops inherited members and the engine throws
 | Class name contains `IED` | IED |
 | `mineTrigger` names a wire, or the class name contains `trip` | Tripwire |
 | Inherits `MineBase` or `BoundingMineBase`, or has a range, pressure or tank trigger | Mine |
-| Anything else — remote, timer, magnetic, IR, command | IED |
+| Anything else (remote, timer, magnetic, IR, command) | IED |
 
 Trigger **names** are matched rather than trigger inheritance: in vanilla
 `CfgMineTriggers`, both the AT mine's `TankTriggerMagnetic` and the SLAM's
@@ -105,8 +105,7 @@ A device's state is an array stored on the explosive object with a **public**
 
 The state is built the first time anyone opens the device and is reused after
 that, so every player sees the same device and progress survives backing off or
-changing hands. The board itself — selection, the tool in hand, progress bars —
-is local UI state in `uiNamespace`.
+changing hands. The board itself (selection, the tool in hand, progress bars) is local UI state in `uiNamespace`.
 
 A watchdog closes the board if the player dies, gets into a vehicle, moves more
 than 6 m away or the device disappears, and drives the anti-tamper clock.
@@ -135,16 +134,16 @@ diagonal of tufts where a branch could be, and ten more are scattered anywhere.
 
 Every timed action goes through `fn_runAction`: it locks every control, draws the
 progress bar over the LCD, and when time is up refreshes the board and runs the
-result. The result does **not** depend on the board still being open — once a
+result. The result does **not** depend on the board still being open. Once a
 cut is committed, it resolves.
 
 Clearing actions (brush, prod, dig, part grass, cut tape) divide their time by
 *Clearing speed*.
 
 **Auto-clear.** When enabled, every board refresh queues `fn_autoClear` for the
-next frame. It starts the next clearing step on its own — the next soil clump,
+next frame. It starts the next clearing step on its own: the next soil clump,
 the next rim cell clockwise (with the dig tool, never the plate), or the next
-tuft over the wire — as a normal timed action. That action's own refresh queues
+tuft over the wire, each as a normal timed action. That action's own refresh queues
 the step after it, so it runs until the clearing stage is done and then stops.
 Only one call is ever queued.
 
@@ -156,8 +155,8 @@ random walk scaled by √dt, so it behaves the same at any frame rate. Holding
 and weakens the spring back to centre; releasing settles it. If the needle leaves
 the band (half-width 0.34, scaled by difficulty) while pushing, the pin slips:
 −30% progress, needle reset and 0.8 s lockout. Past the slip limit the device
-fires. The tuning — median slip after 1.7 s of constant holding, a pin seated in
-about 8 s by easing off at two-thirds of the band — came from offline simulation.
+fires. The tuning (a median slip after 1.7 s of constant holding, a pin seated in
+about 8 s by easing off at two-thirds of the band) came from offline simulation.
 
 ## Success and failure
 
@@ -166,8 +165,7 @@ which removes the explosive and raises `ace_explosives_defuse` exactly as a stoc
 defusal would. With *Keep ACE explode-on-defuse* on, ACE's own explode chance is
 rolled as well.
 
-**Failure** (`fn_fail`) follows *Wrong conductor*: detonate, arm a countdown, or —
-with a spare cut left — mark the conductor as a dead end and play a tone. The
+**Failure** (`fn_fail`) follows *Wrong conductor*: detonate, arm a countdown, or, with a spare cut left, mark the conductor as a dead end and play a tone. The
 timer, the continuity test, plates, slips and taut wires always detonate.
 
 ---
@@ -191,8 +189,8 @@ timer, the continuity test, plates, slips and taut wires always detonate.
 
 `fn_tick` runs one of three small simulations each frame:
 
-- **Pins.** Pins bind in a shuffled order. Holding lifts the selected pin — slowly
-  if it is the binding pin, quickly (and capped) if not — with paperclip shake
+- **Pins.** Pins bind in a shuffled order. Holding lifts the selected pin (slowly
+  if it is the binding pin, quickly and capped if not) with paperclip shake
   added. Releasing the binding pin inside the window sets it; lifting it past the
   window is a mistake. A glint marks the binding pin in its window when the level
   allows.
@@ -238,7 +236,7 @@ Without tsp_breach, postInit registers an `ace_interactMenuOpened` handler and a
 2-second per-frame handler.
 
 **Door discovery** (`fn_doors`). A building's doors are read from its
-`UserActions` config — every building that opens its doors from the action menu
+`UserActions` config. Every building that opens its doors from the action menu
 declares them there. Actions whose class name contains *door* are grouped by the
 number in the name (`OpenDoor_1`, `CloseDoor_1`), keeping each action's memory
 point, condition and statement. Results are cached per building class.
@@ -249,7 +247,7 @@ the player's eyes, a local `ACE_LogicDummy` is created at the handle with a
 **Door** menu. Open and Close run the building's own condition and statement
 (`fn_doorRun`, with `this` set to the building and compiled code cached), so doors
 move exactly as the building's author made them. Lock and Unlock require the
-player to be inside — `fn_isInside` casts a ray straight up and checks it hits
+player to be inside: `fn_isInside` casts a ray straight up and checks it hits
 this building. Pick lock requires a locked, closed door, the tool, and the player
 outside.
 
@@ -259,8 +257,8 @@ within 100 m it hasn't rolled yet. For each, `fn_roll` hashes `[seed, class,
 rounded position]` into a number between 0 and 1 to decide whether the building
 has locks, then `[seed, class, position, door]` per door. Because the roll is
 deterministic, every client arrives at the same locks locally with **no network
-traffic**. A door that already has a lock value — from the mission or a player's
-public change — is never rolled over, glass doors are skipped, and blacklisted
+traffic**. A door that already has a lock value (from the mission or a player's
+public change) is never rolled over, glass doors are skipped, and blacklisted
 classes are ignored. Only player actions (unlock, lock, pick) are broadcast.
 
 ## Stand-in items
@@ -277,7 +275,7 @@ classes are ignored. Only player actions (unlock, lock, pick) are broadcast.
 ```
 
 That check must run on the player's machine, so this one config is **never
-binarised** — `tools/build.ps1` ships any `config.cpp` containing
+binarised**: the release ships any `config.cpp` containing
 `__has_include` as plain text. A binarised config would freeze whatever the build
 machine had installed.
 
@@ -294,7 +292,7 @@ created at runtime, so rotated pieces render as a staircase.
   `ctrlSetTextColor`, so one set of cable sprites serves every insulation colour.
 - Cable sprites are drawn per vertical travel with fixed headroom, so every cable
   keeps the same thickness however far it travels.
-- Things that rotate in the sweet-spot view — the plug and the pick — are
+- Things that rotate in the sweet-spot view (the plug and the pick) are
   pre-rendered frames (5° and 6° steps) swapped with `ctrlSetText`.
 - The lockpicking board is a controls group, so parts that extend past it (a
   pick's handle) are clipped to the board.

@@ -29,19 +29,19 @@ settings files.
 | --- | --- | --- | --- | --- |
 | Replace ACE defusal | `tlbi_defusal_enabled` | on | on / off | Replaces ACE's defusal progress bar with the hands-on procedure for every mine and explosive. Off falls back to stock ACE without unloading the mod. |
 | Difficulty | `tlbi_defusal_difficulty` | Normal | Easy / Normal / Hard / Expert | Adjusts the settings below rather than replacing them. See [Defusal difficulty](#defusal-difficulty). |
-| Minimum conductors | `tlbi_defusal_minWires` | 3 | 3 – 8 | Fewest conductors an IED can be built with. |
-| Maximum conductors | `tlbi_defusal_maxWires` | 5 | 3 – 8 | Most conductors an IED can be built with. More conductors means more readings and more decoys. |
+| Minimum conductors | `tlbi_defusal_minWires` | 3 | 3 to 8 | Fewest conductors an IED can be built with. |
+| Maximum conductors | `tlbi_defusal_maxWires` | 5 | 3 to 8 | Most conductors an IED can be built with. More conductors means more readings and more decoys. |
 | Devices are buried | `tlbi_defusal_excavation` | on | on / off | IEDs start under soil that has to be brushed away. Off starts at the tape. |
 | Auto-clear dirt and grass | `tlbi_defusal_autoClear` | off | on / off | The clearing work does itself while you watch: soil is brushed off an IED, a mine's rim is dug out (never the plate, no prodding needed), the grass over a tripwire is parted. Tape, meter, pins and cuts stay manual. |
-| Clearing speed | `tlbi_defusal_clearSpeed` | 1 | 0.25 – 5 | Speed multiplier for brushing, prodding, digging, parting grass and cutting tape, by hand or automatic. 2 is twice as fast. The per-action times are the base values. |
-| Brush time per pass (s) | `tlbi_defusal_dirtTime` | 0.6 | 0.2 – 5 | One brush of one soil clump. Every clump takes two. |
-| Tape cut time (s) | `tlbi_defusal_tapeTime` | 1.4 | 0.2 – 8 | Cutting one strip of tape. |
-| Time per reading (s) | `tlbi_defusal_probeTime` | 2.5 | 0.5 – 10 | How long the meter takes to settle. Readings are unlimited. |
-| Continuity test on the firing line | `tlbi_defusal_ohmsRisk` | 25% | 0 – 100% | Chance that a continuity test on the firing line fires the detonator. 0% makes the meter safe. |
-| Cut time (s) | `tlbi_defusal_cutTime` | 2 | 0.5 – 15 | How long a cut takes. The board can't be closed during it. |
+| Clearing speed | `tlbi_defusal_clearSpeed` | 1 | 0.25 to 5 | Speed multiplier for brushing, prodding, digging, parting grass and cutting tape, by hand or automatic. 2 is twice as fast. The per-action times are the base values. |
+| Brush time per pass (s) | `tlbi_defusal_dirtTime` | 0.6 | 0.2 to 5 | One brush of one soil clump. Every clump takes two. |
+| Tape cut time (s) | `tlbi_defusal_tapeTime` | 1.4 | 0.2 to 8 | Cutting one strip of tape. |
+| Time per reading (s) | `tlbi_defusal_probeTime` | 2.5 | 0.5 to 10 | How long the meter takes to settle. Readings are unlimited. |
+| Continuity test on the firing line | `tlbi_defusal_ohmsRisk` | 25% | 0 to 100% | Chance that a continuity test on the firing line fires the detonator. 0% makes the meter safe. |
+| Cut time (s) | `tlbi_defusal_cutTime` | 2 | 0.5 to 15 | How long a cut takes. The board can't be closed during it. |
 | Wrong conductor | `tlbi_defusal_failureMode` | Detonate immediately | Detonate immediately (0) / Arm a short countdown (1) / One spare cut, then detonate (2) | What cutting the wrong conductor does. |
-| Countdown length (s) | `tlbi_defusal_countdownTime` | 4 | 1 – 15 | The window to get clear when *Arm a short countdown* is selected. |
-| Anti-tamper timer (s) | `tlbi_defusal_timeLimit` | 0 (off) | 0 – 600 | Seconds of hands-on time before a device fires by itself. Time is banked on the device. |
+| Countdown length (s) | `tlbi_defusal_countdownTime` | 4 | 1 to 15 | The window to get clear when *Arm a short countdown* is selected. |
+| Anti-tamper timer (s) | `tlbi_defusal_timeLimit` | 0 (off) | 0 to 600 | Seconds of hands-on time before a device fires by itself. Time is banked on the device. |
 | Keep ACE explode-on-defuse | `tlbi_defusal_respectAceExplodeOnDefuse` | off | on / off | Also roll ACE's own explode-on-defuse chance after a correct cut. |
 
 ## Interactive Defusal - Device types
@@ -49,7 +49,7 @@ settings files.
 Force explosives onto a procedure. Each takes comma-separated **ammo** class
 names; a parent class covers everything that inherits from it (for example
 `MineBase`). The tripwire list is checked first, then mine, then IED. Anything
-not listed is classified automatically — see
+not listed is classified automatically. See
 [How it works](how-it-works.md#classifying-a-device). Every explosive's class and
 the decision are written to the RPT when its board opens:
 
@@ -67,19 +67,19 @@ the decision are written to the RPT when its board opens:
 
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
-| Prod time (s) | `tlbi_defusal_prodTime` | 1.2 | 0.3 – 5 | One prod of one soil cell. |
-| Dig time (s) | `tlbi_defusal_digTime` | 1.0 | 0.3 – 5 | Digging one soil cell out. |
-| Prodding the pressure plate | `tlbi_defusal_plateProdRisk` | 50% | 0 – 100% | Chance a prod on the plate fires an AP mine. AT mines use 15% of this. |
-| Pin push time (s) | `tlbi_defusal_pinTime` | 4 | 1 – 15 | Seconds of steady pushing to seat a safety pin — mines and tripwire devices. |
-| Pin slips allowed | `tlbi_defusal_pinSlips` | 2 | 0 – 5 | Slips allowed on one device; the next one fires it. |
+| Prod time (s) | `tlbi_defusal_prodTime` | 1.2 | 0.3 to 5 | One prod of one soil cell. |
+| Dig time (s) | `tlbi_defusal_digTime` | 1.0 | 0.3 to 5 | Digging one soil cell out. |
+| Prodding the pressure plate | `tlbi_defusal_plateProdRisk` | 50% | 0 to 100% | Chance a prod on the plate fires an AP mine. AT mines use 15% of this. |
+| Pin push time (s) | `tlbi_defusal_pinTime` | 4 | 1 to 15 | Seconds of steady pushing to seat a safety pin, for mines and tripwire devices. |
+| Pin slips allowed | `tlbi_defusal_pinSlips` | 2 | 0 to 5 | Slips allowed on one device; the next one fires it. |
 
 ## Interactive Defusal - Tripwires
 
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
-| Part grass time (s) | `tlbi_defusal_grassTime` | 0.7 | 0.2 – 5 | Parting one tuft of grass. |
-| Tension check time (s) | `tlbi_defusal_tensionTime` | 2 | 0.5 – 8 | Feeling the wire for tension. |
-| Branch to a second device | `tlbi_defusal_branchChance` | 30% | 0 – 100% | Chance a tripwire branches to a second firing device. |
+| Part grass time (s) | `tlbi_defusal_grassTime` | 0.7 | 0.2 to 5 | Parting one tuft of grass. |
+| Tension check time (s) | `tlbi_defusal_tensionTime` | 2 | 0.5 to 8 | Feeling the wire for tension. |
+| Branch to a second device | `tlbi_defusal_branchChance` | 30% | 0 to 100% | Chance a tripwire branches to a second firing device. |
 
 ## Defusal difficulty
 
@@ -104,7 +104,7 @@ used:
 | Interactive lockpicking | `tlbi_lockpick_enabled` | on | on / off | Picking opens the lockpicking board. Off restores tsp_breach's own progress bar when it is loaded, and removes *Pick lock* from the built-in Door menu. |
 | Take over tsp_breach picking | `tlbi_lockpick_takeOverTsp` | on | on / off | tsp_breach's *Use Lockpick* and *Use Paperclip* open this board. |
 | ACE lockpick counts as a kit | `tlbi_lockpick_aceLockpick` | on | on / off | ACE's vehicle Lockpick picks doors as a lock pick kit, from the built-in Door menu. tsp_breach's own actions only accept its items. |
-| Paperclip bends allowed | `tlbi_lockpick_clipBends` | 2 | 0 – 6 | Mistakes a paperclip survives. The next one snaps it and removes it. |
+| Paperclip bends allowed | `tlbi_lockpick_clipBends` | 2 | 0 to 6 | Mistakes a paperclip survives. The next one snaps it and removes it. |
 | Military buildings | `tlbi_lockpick_classesMilitary` | `Land_Barracks_*, Land_i_Barracks_*, Land_u_Barracks_*, Land_Mil_*, Land_MilOffices_*, Land_GuardHouse_*, Land_ControlTower_*, Land_Army_hut*, Land_Budova4*` | text | Building classes with harder locks (5 pins, windows ×0.85). `*` at the end matches a prefix. tsp_breach's list is also used when loaded. |
 | Reinforced buildings | `tlbi_lockpick_classesReinforced` | `Land_Cargo_*, Land_Medevac_*, Land_Ammostore*, Land_Garaz_*, Land_Bunker_*` | text | Building classes with the hardest locks (6 pins, windows ×0.72). Checked before military. |
 
@@ -120,34 +120,34 @@ fine-tuning sliders for that technique. Variables are named
 | --- | --- | --- | --- | --- |
 | Difficulty with a lock pick kit | `tlbi_lockpick_pinsKit` / `rakeKit` / `dialKit` | Normal | Very easy (0) / Easy (1) / Normal (2) / Hard (3) / Expert (4) | Picks the preset row for this technique with a kit. See [Lockpicking levels](#lockpicking-levels). |
 | Difficulty with a paperclip | `tlbi_lockpick_pinsClip` / `rakeClip` / `dialClip` | Hard | same | The same, with a paperclip. |
-| How often with a lock pick kit | `tlbi_lockpick_pinsOddsKit` / `rakeOddsKit` / `dialOddsKit` | 0.55 / 0.30 / 0.15 | 0 – 1 | Relative weight of this technique when a kit is used, against the other two pages. 0 = never. |
-| How often with a paperclip | `tlbi_lockpick_pinsOddsClip` / `rakeOddsClip` / `dialOddsClip` | 0.20 / 0.40 / 0.40 | 0 – 1 | The same, for a paperclip. If all three are 0 for a tool, it gets pin tumbler. |
+| How often with a lock pick kit | `tlbi_lockpick_pinsOddsKit` / `rakeOddsKit` / `dialOddsKit` | 0.55 / 0.30 / 0.15 | 0 to 1 | Relative weight of this technique when a kit is used, against the other two pages. 0 = never. |
+| How often with a paperclip | `tlbi_lockpick_pinsOddsClip` / `rakeOddsClip` / `dialOddsClip` | 0.20 / 0.40 / 0.40 | 0 to 1 | The same, for a paperclip. If all three are 0 for a tool, it gets pin tumbler. |
 
-**Pin tumbler sliders** — multiply the chosen level:
+**Pin tumbler sliders** multiply the chosen level:
 
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
-| Shear-line window | `tlbi_lockpick_pinsWindow` | ×1 | 0.25 – 3 | How far either side of the shear line the binding pin can be released and still set. Higher is easier. |
-| Binding pin lift speed | `tlbi_lockpick_pinsLift` | ×1 | 0.25 – 2 | How fast the binding pin rises. Lower gives more time to let go. |
-| Paperclip shake | `tlbi_lockpick_pinsShake` | ×1 | 0 – 3 | How much a paperclip wanders the pin. 0 is as steady as a kit. |
-| Extra pins | `tlbi_lockpick_pinsExtra` | 0 | −3 – +3 | Pins added or removed on top of the level and door class. Always 3 – 7. |
+| Shear-line window | `tlbi_lockpick_pinsWindow` | ×1 | 0.25 to 3 | How far either side of the shear line the binding pin can be released and still set. Higher is easier. |
+| Binding pin lift speed | `tlbi_lockpick_pinsLift` | ×1 | 0.25 to 2 | How fast the binding pin rises. Lower gives more time to let go. |
+| Paperclip shake | `tlbi_lockpick_pinsShake` | ×1 | 0 to 3 | How much a paperclip wanders the pin. 0 is as steady as a kit. |
+| Extra pins | `tlbi_lockpick_pinsExtra` | 0 | −3 to +3 | Pins added or removed on top of the level and door class. Always 3 to 7. |
 
 **Rake sliders:**
 
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
-| Tension band width | `tlbi_lockpick_rakeBand` | ×1 | 0.25 – 3 | Width of the green band. Higher is easier; never more than 90% of the gauge. |
-| Band drift | `tlbi_lockpick_rakeDrift` | ×1 | 0 – 3 | How fast the band wanders. 0 keeps it still. |
-| Pin set chance | `tlbi_lockpick_rakeChance` | ×1 | 0.25 – 3 | Chance a stroke inside the band sets a pin. |
-| Tension speed | `tlbi_lockpick_rakeTension` | ×1 | 0.25 – 2 | How fast tension builds and eases. Lower is easier to control. |
+| Tension band width | `tlbi_lockpick_rakeBand` | ×1 | 0.25 to 3 | Width of the green band. Higher is easier; never more than 90% of the gauge. |
+| Band drift | `tlbi_lockpick_rakeDrift` | ×1 | 0 to 3 | How fast the band wanders. 0 keeps it still. |
+| Pin set chance | `tlbi_lockpick_rakeChance` | ×1 | 0.25 to 3 | Chance a stroke inside the band sets a pin. |
+| Tension speed | `tlbi_lockpick_rakeTension` | ×1 | 0.25 to 2 | How fast tension builds and eases. Lower is easier to control. |
 
 **Sweet spot sliders:**
 
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
-| Sweet spot width | `tlbi_lockpick_dialWidth` | ×1 | 0.25 – 3 | Width of the sweet spot. Higher is easier. |
-| Strain tolerance | `tlbi_lockpick_dialStrain` | ×1 | 0.25 – 3 | How long the plug can be forced before it springs back. |
-| Paperclip shake | `tlbi_lockpick_dialShake` | ×1 | 0 – 3 | How much a paperclip wanders the pick. 0 is as steady as a kit. |
+| Sweet spot width | `tlbi_lockpick_dialWidth` | ×1 | 0.25 to 3 | Width of the sweet spot. Higher is easier. |
+| Strain tolerance | `tlbi_lockpick_dialStrain` | ×1 | 0.25 to 3 | How long the plug can be forced before it springs back. |
+| Paperclip shake | `tlbi_lockpick_dialShake` | ×1 | 0 to 3 | How much a paperclip wanders the pick. 0 is as steady as a kit. |
 
 ## Lockpicking levels
 
@@ -189,16 +189,15 @@ system and settings apply and these are ignored.
 | Setting | Variable | Default | Range | Effect |
 | --- | --- | --- | --- | --- |
 | Door interactions | `tlbi_lockpick_doorActions` | on | on / off | The built-in Door menu (open, close, lock, unlock, pick) and random locking. |
-| Buildings with locked doors | `tlbi_lockpick_lockHouses` | 25% | 0 – 100% | Chance a building has any locked doors. Every player sees the same doors locked. |
-| Locked doors in those buildings | `tlbi_lockpick_lockDoors` | 50% | 0 – 100% | Chance each door of such a building is locked. Doors the mission already set are left alone. |
+| Buildings with locked doors | `tlbi_lockpick_lockHouses` | 25% | 0 to 100% | Chance a building has any locked doors. Every player sees the same doors locked. |
+| Locked doors in those buildings | `tlbi_lockpick_lockDoors` | 50% | 0 to 100% | Chance each door of such a building is locked. Doors the mission already set are left alone. |
 | Never lock these buildings | `tlbi_lockpick_lockBlacklist` | empty | text | Building classes never locked at random. `*` at the end matches a prefix. |
 
 ---
 
 ## Example settings file
 
-A `cba_settings.sqf` (or mission `cba_settings.sqf`) for a relaxed server —
-forgiving defusal with auto-clearing, easy raking with a kit, and paperclips on
+A `cba_settings.sqf` (or mission `cba_settings.sqf`) for a relaxed server: forgiving defusal with auto-clearing, easy raking with a kit, and paperclips on
 Normal:
 
 ```sqf

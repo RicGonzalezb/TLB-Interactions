@@ -13,8 +13,7 @@
   <a href="docs/defusal.md">Defusal guide</a> ·
   <a href="docs/lockpicking.md">Lockpicking &amp; doors</a> ·
   <a href="docs/settings.md">All settings</a> ·
-  <a href="docs/how-it-works.md">How it works</a> ·
-  <a href="docs/building.md">Building</a>
+  <a href="docs/how-it-works.md">How it works</a>
 </p>
 
 ---
@@ -22,24 +21,24 @@
 ## What it is
 
 TLB Interactions turns two of ACE's waiting-for-a-bar moments into things you
-actually do — and can get wrong.
+actually do, and can get wrong.
 
 **Defusal.** Using ACE's *Defuse* action no longer runs a timer. It opens a
 board showing the device in front of you, and what you do depends on what it is:
 
 | Device | What you do |
 | --- | --- |
-| **IED** — wired devices, and anything remote, timed, magnetic or IR | Brush the soil off, cut away the tape, find the firing line with a meter (volts and continuity), cut it. |
-| **Mine** — pressure and proximity mines, AP and AT | Prod the soil to find it, dig out the rim without touching the pressure plate, seat the safety pin with a steady hand. |
-| **Tripwire** — tripwire mines and flares | Part the grass to trace the whole wire (it may branch to a second device), check the tension, pin, cut. |
+| **IED**: wired devices, and anything remote, timed, magnetic or IR | Brush the soil off, cut away the tape, find the firing line with a meter (volts and continuity), cut it. |
+| **Mine**: pressure and proximity mines, AP and AT | Prod the soil to find it, dig out the rim without touching the pressure plate, seat the safety pin with a steady hand. |
+| **Tripwire**: tripwire mines and flares | Part the grass to trace the whole wire (it may branch to a second device), check the tension, pin, cut. |
 
 It replaces ACE's defusal rather than adding new explosives, so it works on
-**every** mine and explosive ACE can already defuse — vanilla, ACE, RHS, CUP,
+**every** mine and explosive ACE can already defuse: vanilla, ACE, RHS, CUP,
 mission-placed or Zeus-placed.
 
 **Lockpicking.** Locked doors are picked on a board with a **lock pick kit** or a
-**paperclip**. Each lock rolls one of three techniques — pin tumbler, rake or
-sweet spot — and a paperclip bends with every mistake and snaps on the third.
+**paperclip**. Each lock rolls one of three techniques (pin tumbler, rake or
+sweet spot), and a paperclip bends with every mistake and snaps on the third.
 Doors always work: with **tsp_breach** loaded its door system is used; without
 it, TLB Interactions runs its own door menu and random door locking.
 
@@ -53,20 +52,19 @@ levels for each lockpicking technique with each tool.
 | Arma 3 | v2.14 or newer |
 | [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997) | required |
 | [ACE3](https://steamcommunity.com/workshop/filedetails/?id=463939057) | required |
-| tsp_breach | optional — its door actions, locking and items are used when loaded |
+| tsp_breach | optional. Its door actions, locking and items are used when loaded |
 
 ## Installation
 
-1. Build the mod (see [Building](docs/building.md)) or take a release build.
-2. Put the `@TLB Interactions` folder in your Arma 3 directory or mod folder.
-3. Load it together with CBA_A3 and ACE3.
-4. On a server, load it on the server **and** every client — all settings are
+1. Get the `@TLB Interactions` mod from a TLB MilSim release.
+2. Load it together with CBA_A3 and ACE3.
+3. On a server, load it on the server **and** every client. All settings are
    server-forced, and the boards run on the client.
 
 ## Quick start
 
 **Defusing:** walk up to an explosive with ACE's defusal kit and use *Defuse* as
-usual. Read the board's title — **IED**, **Mine** or **Tripwire** — and follow
+usual. Read the board's title (**IED**, **Mine** or **Tripwire**) and follow
 that procedure. Everything you finish stays done on the device, so you can back
 off and come back, or hand it to a team mate. Full walkthrough:
 [Defusal guide](docs/defusal.md).
@@ -84,11 +82,10 @@ its default and its range: [All settings](docs/settings.md).
 
 | Page | For |
 | --- | --- |
-| [Defusal guide](docs/defusal.md) | Players — every stage of the IED, mine and tripwire procedures, what the readings mean, what kills you. |
-| [Lockpicking & doors](docs/lockpicking.md) | Players — tools, the three techniques, door classes, the door menu without tsp_breach. |
-| [All settings](docs/settings.md) | Mission makers and server admins — every CBA setting with its default, range and effect, and the difficulty tables. |
-| [How it works](docs/how-it-works.md) | Developers — how ACE is hooked, how devices and locks are generated, synced and drawn, how tsp_breach is taken over. |
-| [Building](docs/building.md) | Developers — building PBOs, regenerating textures, signing, repository layout. |
+| [Defusal guide](docs/defusal.md) | Players: every stage of the IED, mine and tripwire procedures, what the readings mean, what kills you. |
+| [Lockpicking & doors](docs/lockpicking.md) | Players: tools, the three techniques, door classes, the door menu without tsp_breach. |
+| [All settings](docs/settings.md) | Mission makers and server admins: every CBA setting with its default, range and effect, and the difficulty tables. |
+| [How it works](docs/how-it-works.md) | Developers: how ACE is hooked, how devices and locks are generated, synced and drawn, how tsp_breach is taken over. |
 
 ## Compatibility
 

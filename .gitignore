@@ -21,6 +21,10 @@
 *.bikey
 !keys/*.bikey
 
+# Python caches
+__pycache__/
+*.pyc
+
 # Editor and OS clutter
 *.bak
 *.tmp

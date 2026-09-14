@@ -176,7 +176,7 @@ are pickable too, and a picked door is unlocked for everyone.
 
 ## Doors with tsp_breach
 
-When tsp_breach is loaded it owns the doors:
+When [Breach - Rewrite](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995) (tsp_breach) is loaded it owns the doors:
 
 - its ACE door actions (open, close, knock, lock, unlock, use lockpick / paperclip),
 - its random locking of houses at mission start,

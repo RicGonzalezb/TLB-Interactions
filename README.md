@@ -86,7 +86,7 @@ levels for each lockpicking technique with each tool.
 | Arma 3 | v2.14 or newer |
 | [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997) | required |
 | [ACE3](https://steamcommunity.com/workshop/filedetails/?id=463939057) | required |
-| tsp_breach | optional. Its door actions, locking and items are used when loaded |
+| [Breach - Rewrite](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995) (tsp_breach) | optional. Its door actions, locking and items are used when loaded |
 
 ## Installation
 
@@ -129,7 +129,7 @@ its default and its range: [All settings](docs/settings.md).
   working.
 - AI defusing on their own, and the mod switched off in its settings, use ACE's
   original behaviour.
-- **tsp_breach:** detected automatically. Its door actions and locking stay in
+- **[Breach - Rewrite](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995) (tsp_breach):** detected automatically. Its door actions and locking stay in
   charge, and its lockpicking opens this board. Without it, the built-in door
   system takes over. The two never run at the same time.
 - Lock state uses the vanilla `bis_disabled_Door_N` variables, so missions and

@@ -38,6 +38,22 @@ if (hasInterface) then {
     if (isClass (configFile >> "CfgPatches" >> "zen_custom_modules")) then {
         ["TLB Interactions", "STR_tlbi_lockpick_module_name", {_this call tlbi_lockpick_fnc_zeusLock}, "\tlbi\addons\main\data\logo_small_ca.paa"] call zen_custom_modules_fnc_register;
     };
+
+    // Zeus context menu (Zeus Enhanced): "Lock settings" when the cursor is near a
+    // door handle.
+    if (isClass (configFile >> "CfgPatches" >> "zen_context_menu")) then {
+        [[
+            "tlbi_lockSettings", localize "STR_tlbi_lockpick_module_name", "\tlbi\addons\main\data\logo_small_ca.paa",
+            {
+                params ["_position"];
+                [_position] call tlbi_lockpick_fnc_zeusLock;
+            },
+            {
+                params ["_position"];
+                !(([_position] call tlbi_lockpick_fnc_nearestDoor) isEqualTo [])
+            }
+        ] call zen_context_menu_fnc_createAction, [], 0] call zen_context_menu_fnc_addAction;
+    };
 };
 
 tlbi_lockpick_tspLoaded = isClass (configFile >> "CfgPatches" >> "tsp_breach");

@@ -1,8 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: TLB
- * Zeus Lock settings module (Zeus Enhanced): configures the door whose handle is
- * nearest the module.
+ * Zeus Lock settings (Zeus Enhanced): configures the door whose handle is nearest
+ * the position. Used by the Zeus module and by the Zeus context menu entry.
  *
  * The lock state is applied straight away. The other options are stored on the
  * building for that door and override any Eden module covering it; they are read
@@ -18,29 +18,7 @@
 
 params ["_position", ["_object", objNull]];
 
-private _where = ASLToAGL _position;
-private _found = [];
-private _nearest = 4;
-
-{
-    private _house = _x;
-
-    {
-        _x params ["_id", "_door", "_point"];
-
-        private _relative = [0, 0, 0];
-        if (_point != "") then { _relative = _house selectionPosition [_point, "Memory"] };
-        if (_relative isEqualTo [0, 0, 0]) then { _relative = _house selectionPosition [_door, "Geometry", "AveragePoint"] };
-
-        if !(_relative isEqualTo [0, 0, 0]) then {
-            private _distance = (_house modelToWorld _relative) distance _where;
-            if (_distance < _nearest) then {
-                _nearest = _distance;
-                _found = [_house, _door, _id];
-            };
-        };
-    } forEach ([_house] call tlbi_lockpick_fnc_doors);
-} forEach nearestObjects [_where, ["House"], 30];
+private _found = [_position] call tlbi_lockpick_fnc_nearestDoor;
 
 if (_found isEqualTo []) exitWith {
     [localize "STR_tlbi_zeus_noDoor"] call zen_common_fnc_showMessage;

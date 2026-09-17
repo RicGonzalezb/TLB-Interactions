@@ -1,7 +1,8 @@
 #include "..\script_component.hpp"
 /*
  * Author: TLB
- * Zeus Explosive settings module (Zeus Enhanced): configures one explosive.
+ * Zeus Explosive settings (Zeus Enhanced): configures one explosive. Used by the
+ * Zeus module and by the Zeus context menu entry.
  *
  * The values are stored on the explosive and override any Eden module covering
  * it. Difficulty and auto-clear apply the next time its board opens; procedure,
@@ -18,16 +19,7 @@
 
 params ["_position", ["_object", objNull]];
 
-private _explosive = objNull;
-
-if (!isNull _object && {_object in allMines}) then {
-    _explosive = _object;
-} else {
-    private _where = ASLToAGL _position;
-    private _near = allMines select {_x distance _where < 3};
-    _near = [_near, [], {_x distance _where}, "ASCEND"] call BIS_fnc_sortBy;
-    _explosive = _near param [0, objNull];
-};
+private _explosive = [_position, _object] call tlbi_defusal_fnc_findExplosive;
 
 if (isNull _explosive) exitWith {
     [localize "STR_tlbi_zeus_noExplosive"] call zen_common_fnc_showMessage;

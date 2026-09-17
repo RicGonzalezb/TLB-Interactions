@@ -312,7 +312,8 @@ grass and branch in the generators), so modules also cover explosives placed lat
 Lock options are read in `fn_start`, except the lock state, which `fn_moduleLock`
 applies on the server a few seconds into the mission.
 
-The Zeus modules are registered with Zeus Enhanced when it is loaded. They store
+The Zeus modules, and matching Zeus context menu entries, are registered with Zeus
+Enhanced when it is loaded. They store
 their options on the object itself (`tlbi_defusal_zeus_<option>` on an explosive,
 `tlbi_lockpick_zeus_<door number>` on a building), and those win over any Eden
 module: explosive options are read through `fn_explosiveValue`, lock options in

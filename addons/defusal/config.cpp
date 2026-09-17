@@ -42,6 +42,7 @@ class CfgFunctions {
             class cutWire {};
             class drawBoard {};
             class explosiveValue {};
+            class findExplosive {};
             class isIndoors {};
             class keyMatches {};
             class keyName {};

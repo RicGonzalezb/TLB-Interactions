@@ -80,6 +80,11 @@ Unlike the Eden modules, a Zeus module configures **one** object:
   state is applied straight away, and the other options are used the next time
   the lock is picked.
 
+The same dialogs are in the Zeus **context menu** (right-click, or <kbd>V</kbd> by
+default): point at an explosive and choose **Explosive settings**, or point at a
+door and choose **Lock settings**. The entries only appear when there is an
+explosive or door handle under the cursor.
+
 Zeus settings are stored on the explosive or door and win over any Eden module
 covering it. Place the module again to change them; choose *Use settings* to
 clear an option.

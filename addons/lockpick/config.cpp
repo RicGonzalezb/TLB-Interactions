@@ -45,6 +45,7 @@ class CfgFunctions {
             class isInside {};
             class lockTick {};
             class moduleLock {};
+            class nearestDoor {};
             class roll {};
             class mistake {};
             class onUnload {};

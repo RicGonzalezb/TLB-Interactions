@@ -14,6 +14,10 @@ Everything inside the area uses the module's options, and any option left on
 wins, so a small module over one building can refine a large one over a whole
 town. Height is ignored.
 
+| The modules in Eden | Explosive settings in Eden |
+| --- | --- |
+| <img src="images/eden-modules-tree.jpg" alt="TLB Interactions modules in the Eden asset browser" width="220"> | <img src="images/eden-explosive-module.jpg" alt="Explosive settings module attributes in Eden" width="380"> |
+
 - [Explosive settings](#explosive-settings)
 - [Lock settings](#lock-settings)
 - [Zeus modules](#zeus-modules)
@@ -84,6 +88,11 @@ The same dialogs are in the Zeus **context menu** (right-click, or <kbd>V</kbd> 
 default): point at an explosive and choose **Explosive settings**, or point at a
 door and choose **Lock settings**. The entries only appear when there is an
 explosive or door handle under the cursor.
+
+| Context menu | Dialog |
+| --- | --- |
+| <img src="images/zeus-explosive-menu.jpg" alt="Explosive settings in the Zeus context menu" width="380"> | <img src="images/zeus-explosive-dialog.jpg" alt="Zeus Explosive settings dialog" width="380"> |
+| <img src="images/zeus-lock-menu.jpg" alt="Lock settings in the Zeus context menu" width="380"> | <img src="images/zeus-lock-dialog.jpg" alt="Zeus Lock settings dialog" width="380"> |
 
 Zeus settings are stored on the explosive or door and win over any Eden module
 covering it. Place the module again to change them; choose *Use settings* to

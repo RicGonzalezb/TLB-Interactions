@@ -30,8 +30,13 @@ if (!alive _unit || {isNull _house} || {_item == ""}) exitWith { false };
 // A Lock settings module covering the door handle can override the lock.
 private _doorPos = _house modelToWorld (_house selectionPosition _door);
 if ((_house selectionPosition _door) isEqualTo [0, 0, 0]) then { _doorPos = getPos _unit };
+// Zeus Lock settings on this door win, then the Eden module covering the handle.
+// Stored order: Pickable, Technique, DoorClass, KitLevel, ClipLevel.
+private _zeus = _house getVariable [[_door] call tlbi_lockpick_fnc_doorKey, []];
 private _fnc_module = {
     params ["_name"];
+    private _value = _zeus param [["Pickable", "Technique", "DoorClass", "KitLevel", "ClipLevel"] find _name, -1];
+    if (_value isEqualType 0 && {_value >= 0}) exitWith { _value };
     ["tlbi_moduleLock", _doorPos, _name, -1] call tlbi_defusal_fnc_moduleValue
 };
 

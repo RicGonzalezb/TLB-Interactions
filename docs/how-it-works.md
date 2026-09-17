@@ -312,6 +312,12 @@ grass and branch in the generators), so modules also cover explosives placed lat
 Lock options are read in `fn_start`, except the lock state, which `fn_moduleLock`
 applies on the server a few seconds into the mission.
 
+The Zeus modules are registered with Zeus Enhanced when it is loaded. They store
+their options on the object itself (`tlbi_defusal_zeus_<option>` on an explosive,
+`tlbi_lockpick_zeus_<door number>` on a building), and those win over any Eden
+module: explosive options are read through `fn_explosiveValue`, lock options in
+`fn_start`.
+
 **Keybinds.** The keys are CBA keybinds, registered at postInit so they can be
 rebound in Configure Addons. A dialog does not pass key presses on to CBA's
 keybind handler, so the boards compare their own key events against the bindings

@@ -402,6 +402,15 @@
             <Key ID="STR_tlbi_lockpick_module_level_tip">
                 <English>Replaces the technique's difficulty for this tool on these doors.</English>
             </Key>
+            <Key ID="STR_tlbi_zeus_noDoor">
+                <English>Place the module on a door handle.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_lockApplied">
+                <English>Lock settings applied.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_lockState_tip">
+                <English>Lock or unlock this door now.</English>
+            </Key>
         </Container>
     </Package>
 </Project>

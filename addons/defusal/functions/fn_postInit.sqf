@@ -53,6 +53,11 @@ if (!hasInterface) exitWith {
     {false}, {false}, [57, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
+// Zeus Explosive settings module, when Zeus Enhanced is loaded.
+if (isClass (configFile >> "CfgPatches" >> "zen_custom_modules")) then {
+    ["TLB Interactions", "STR_tlbi_defusal_module_name", {_this call tlbi_defusal_fnc_zeusExplosive}, "\tlbi\addons\main\data\logo_small_ca.paa"] call zen_custom_modules_fnc_register;
+};
+
 private _fnc_replaceDefuseAction = {
     params ["_class", "_distance"];
 

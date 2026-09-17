@@ -37,12 +37,12 @@ private _tufts = [];
 // the "Grass on tripwires inside buildings" setting. Without grass the wire
 // starts traced.
 private _where = getPos _explosive;
-private _grassModule = ["tlbi_moduleExplosive", _where, "Grass", -1] call tlbi_defusal_fnc_moduleValue;
+private _grassModule = [_explosive, "Grass", -1] call tlbi_defusal_fnc_explosiveValue;
 private _hasGrass = [
     tlbi_defusal_tripIndoorGrass || {!([_explosive] call tlbi_defusal_fnc_isIndoors)},
     _grassModule == 1
 ] select (_grassModule >= 0);
-private _branchModule = ["tlbi_moduleExplosive", _where, "Branch", -1] call tlbi_defusal_fnc_moduleValue;
+private _branchModule = [_explosive, "Branch", -1] call tlbi_defusal_fnc_explosiveValue;
 
 private _fnc_tuft = {
     params ["_tx", "_ty", "_onPath"];

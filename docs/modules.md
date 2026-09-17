@@ -2,21 +2,21 @@
 
 [← Back to README](../README.md)
 
-Two Eden modules let mission makers configure explosives and doors in one part of
-the map, without changing the server settings. They are under **Systems (F5) →
+Two modules let mission makers configure explosives and doors without changing
+the server settings: Eden modules for an area, and Zeus modules for one explosive
+or door in a live mission. The Eden modules are under **Systems (F5) →
 Modules → TLB Interactions**.
 
-Both work by **area**. Place the module, then resize its area (circle or
+The Eden modules work by **area**. Place the module, then resize its area (circle or
 rectangle) over the building, compound or stretch of road you want to change.
 Everything inside the area uses the module's options, and any option left on
 *Use settings* keeps the CBA setting. Where two areas overlap, the smaller one
 wins, so a small module over one building can refine a large one over a whole
 town. Height is ignored.
 
-The modules are for the Eden editor and are not available in Zeus.
-
 - [Explosive settings](#explosive-settings)
 - [Lock settings](#lock-settings)
+- [Zeus modules](#zeus-modules)
 
 ---
 
@@ -61,3 +61,25 @@ The technique's sliders from its settings page still apply on top.
 **Example: a locked armoury with a hard lock.** Place *Lock settings* with a
 small area over the armoury door. Set *Lock at mission start* to *Locked*,
 *Technique* to *Sweet spot*, and both difficulties to *Hard*.
+
+## Zeus modules
+
+For a live mission, both modules are also available in Zeus under
+**Modules → TLB Interactions**. They need
+[Zeus Enhanced](https://steamcommunity.com/workshop/filedetails/?id=1779063631).
+
+Unlike the Eden modules, a Zeus module configures **one** object:
+
+- **Explosive settings:** place it on an explosive (or within 3 m of it). A dialog
+  opens with the same options as the Eden module, plus **Rebuild the device**.
+  Difficulty and auto-clear apply the next time the device is opened. Procedure,
+  burial, grass and branch shape the device when it is built, so leave *Rebuild
+  the device* ticked for them to apply to a device someone has already opened.
+  Rebuilding loses any progress on it.
+- **Lock settings:** place it on a door handle (or within 4 m of it). The lock
+  state is applied straight away, and the other options are used the next time
+  the lock is picked.
+
+Zeus settings are stored on the explosive or door and win over any Eden module
+covering it. Place the module again to change them; choose *Use settings* to
+clear an option.

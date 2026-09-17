@@ -23,8 +23,8 @@ private _kind = [_explosive] call tlbi_defusal_fnc_classify;
 
 // Per-device options from an Explosive settings module, for this board.
 private _where = getPos _explosive;
-private _level = ["tlbi_moduleExplosive", _where, "Difficulty", tlbi_defusal_difficulty] call tlbi_defusal_fnc_moduleValue;
-private _autoClear = ["tlbi_moduleExplosive", _where, "AutoClear", -1] call tlbi_defusal_fnc_moduleValue;
+private _level = [_explosive, "Difficulty", tlbi_defusal_difficulty] call tlbi_defusal_fnc_explosiveValue;
+private _autoClear = [_explosive, "AutoClear", -1] call tlbi_defusal_fnc_explosiveValue;
 uiNamespace setVariable ["tlbi_defusal_level", _level];
 uiNamespace setVariable ["tlbi_defusal_autoClearNow", [tlbi_defusal_autoClear, _autoClear == 1] select (_autoClear >= 0)];
 

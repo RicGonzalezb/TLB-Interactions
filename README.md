@@ -119,7 +119,7 @@ its default and its range: [All settings](docs/settings.md).
 | --- | --- |
 | [Defusal guide](docs/defusal.md) | Players: every stage of the IED, mine and tripwire procedures, what the readings mean, what kills you. |
 | [Lockpicking & doors](docs/lockpicking.md) | Players: tools, the three techniques, door classes, the door menu without tsp_breach. |
-| [Modules](docs/modules.md) | Mission makers: Eden modules that configure the explosives or doors in one area. |
+| [Modules](docs/modules.md) | Mission makers: Eden modules for an area and Zeus modules for one explosive or door. |
 | [All settings](docs/settings.md) | Mission makers and server admins: every CBA setting with its default, range and effect, and the difficulty tables. |
 | [How it works](docs/how-it-works.md) | Developers: how ACE is hooked, how devices and locks are generated, synced and drawn, how tsp_breach is taken over. |
 

@@ -41,6 +41,7 @@ class CfgFunctions {
             class cutTape {};
             class cutWire {};
             class drawBoard {};
+            class explosiveValue {};
             class isIndoors {};
             class keyMatches {};
             class keyName {};
@@ -60,6 +61,7 @@ class CfgFunctions {
             class tripSelect {};
             class tripTension {};
             class tripTuft {};
+            class zeusExplosive {};
             class fail {};
             class generatePuzzle {};
             class onBoardUnload {};

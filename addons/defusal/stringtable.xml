@@ -572,6 +572,18 @@
             <Key ID="STR_tlbi_defusal_module_autoClear_tip">
                 <English>Whether soil, mine rims and grass clear themselves for explosives in the area.</English>
             </Key>
+            <Key ID="STR_tlbi_zeus_noExplosive">
+                <English>Place the module on an explosive.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_explosiveApplied">
+                <English>Explosive settings applied.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_rebuild">
+                <English>Rebuild the device</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_rebuild_tip">
+                <English>Start the device again with these settings. Any progress on it is lost. Needed for procedure, burial, grass and branch on a device someone has already opened.</English>
+            </Key>
         </Container>
     </Package>
 </Project>

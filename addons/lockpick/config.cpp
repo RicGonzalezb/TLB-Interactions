@@ -34,6 +34,7 @@ class CfgFunctions {
 
             class doorAction {};
             class doorClass {};
+            class doorKey {};
             class doorHelpers {};
             class doorRun {};
             class doors {};
@@ -54,6 +55,7 @@ class CfgFunctions {
             class tick {};
             class tspPick {};
             class unlock {};
+            class zeusLock {};
         };
     };
 };

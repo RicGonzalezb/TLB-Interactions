@@ -32,6 +32,12 @@ if (hasInterface) then {
         ["tlbi_lockpick_hold", "STR_tlbi_lockpick_key_hold", 57],
         ["tlbi_lockpick_rake", "STR_tlbi_lockpick_key_rake", 19]
     ];
+
+    // Zeus Lock settings module, when Zeus Enhanced is loaded. Works with and
+    // without tsp_breach, so it is registered before the tsp_breach check.
+    if (isClass (configFile >> "CfgPatches" >> "zen_custom_modules")) then {
+        ["TLB Interactions", "STR_tlbi_lockpick_module_name", {_this call tlbi_lockpick_fnc_zeusLock}, "\tlbi\addons\main\data\logo_small_ca.paa"] call zen_custom_modules_fnc_register;
+    };
 };
 
 tlbi_lockpick_tspLoaded = isClass (configFile >> "CfgPatches" >> "tsp_breach");

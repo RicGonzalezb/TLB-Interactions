@@ -2,7 +2,7 @@
 
 [← Back to README](README.md)
 
-## Unreleased
+## 1.1.0 (2026-09-17)
 
 ### Added
 

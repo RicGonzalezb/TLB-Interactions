@@ -56,16 +56,16 @@ private _dig = localize "STR_tlbi_defusal_btn_dig";
 (_display displayCtrl IDC_BTN_CLOSE) ctrlEnable (!_busy);
 
 (_display displayCtrl IDC_READOUT) ctrlSetText ([
-    format [localize "STR_tlbi_defusal_lcd_pin", _slips, PIN_SLIPS],
+    format [localize "STR_tlbi_defusal_lcd_pin", _slips, PIN_SLIPS, toUpper (["tlbi_defusal_seatPin"] call tlbi_defusal_fnc_keyName)],
     format [localize "STR_tlbi_defusal_lcd_tool", [_prod, _dig] select (_tool == TOOL_DIG)]
 ] select _locating);
 
 (_display displayCtrl IDC_STAGE) ctrlSetText localize (["STR_tlbi_defusal_mine_stage_pin", "STR_tlbi_defusal_mine_stage_locate"] select _locating);
 
 if (!_busy || _pinning) then {
-    [localize (call {
+    [format [localize (call {
         if (_locating) exitWith { "STR_tlbi_defusal_mine_msg_locate" };
         if (_pinning) exitWith { "STR_tlbi_defusal_pin_msg_hold" };
         "STR_tlbi_defusal_mine_msg_exposed"
-    })] call tlbi_defusal_fnc_setStatus;
+    }), ["tlbi_defusal_seatPin"] call tlbi_defusal_fnc_keyName]] call tlbi_defusal_fnc_setStatus;
 };

@@ -75,13 +75,13 @@
                 <English>TURN %1  STRAIN %2</English>
             </Key>
             <Key ID="STR_tlbi_lockpick_help_pins">
-                <English>A/D picks a pin, hold Space to lift. The binding pin lifts stiffly - let go when it reaches the shear line.</English>
+                <English>%1 and %2 pick a pin, hold %3 to lift. The binding pin lifts stiffly - let go when it reaches the shear line.</English>
             </Key>
             <Key ID="STR_tlbi_lockpick_help_rake">
-                <English>Hold Space for tension and keep the needle in the green band. Press R to rake while it is there.</English>
+                <English>Hold %3 for tension and keep the needle in the green band. Press %4 to rake while it is there.</English>
             </Key>
             <Key ID="STR_tlbi_lockpick_help_dial">
-                <English>A/D moves the pick. Hold Space to turn - the closer the pick is to the sweet spot, the further it turns. Don't force it.</English>
+                <English>%1 and %2 move the pick. Hold %3 to turn - the closer the pick is to the sweet spot, the further it turns. Don't force it.</English>
             </Key>
         </Container>
         <Container name="Messages">
@@ -317,6 +317,99 @@
             </Key>
             <Key ID="STR_tlbi_lockpick_msg_lockedByHand">
                 <English>You lock the door.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_left">
+                <English>Lockpicking: previous pin / pick left</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_left_desc">
+                <English>Choose the previous pin, or swing the pick left (hold).</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_right">
+                <English>Lockpicking: next pin / pick right</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_right_desc">
+                <English>Choose the next pin, or swing the pick right (hold).</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_hold">
+                <English>Lockpicking: lift, tension or turn (hold)</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_hold_desc">
+                <English>Lift a pin, hold tension while raking, or turn the plug.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_rake">
+                <English>Lockpicking: rake</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_key_rake_desc">
+                <English>Make a rake stroke.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_msg_unpickable">
+                <English>This lock can't be picked.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_name">
+                <English>Lock settings</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_desc">
+                <English>Configures every door whose handle is inside this module's area: lock or unlock it at mission start, force the technique, door class and difficulty, or make it unpickable. Where areas overlap, the smallest one wins.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_lockState">
+                <English>Lock at mission start</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_lockState_tip">
+                <English>Locks or unlocks these doors a few seconds into the mission, after random door locking has run.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_lockState_leave">
+                <English>Leave as it is</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_lockState_locked">
+                <English>Locked</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_lockState_unlocked">
+                <English>Unlocked</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_pickable">
+                <English>Can be picked</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_pickable_tip">
+                <English>No makes these locks unpickable.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_technique">
+                <English>Technique</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_technique_tip">
+                <English>Force the technique for both tools.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_technique_random">
+                <English>Random</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_technique_pins">
+                <English>Pin tumbler</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_technique_rake">
+                <English>Rake</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_technique_dial">
+                <English>Sweet spot</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_doorClass">
+                <English>Door class</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_doorClass_tip">
+                <English>Overrides the building lists: sets the pin count and how tight the windows are.</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_doorClass_building">
+                <English>From building type</English>
+            </Key>
+            <Key ID="STR_tlbi_lockpick_module_level_tip">
+                <English>Replaces the technique's difficulty for this tool on these doors.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_noDoor">
+                <English>Place the module on a door handle.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_lockApplied">
+                <English>Lock settings applied.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_lockState_tip">
+                <English>Lock or unlock this door now.</English>
             </Key>
         </Container>
     </Package>

@@ -45,6 +45,36 @@ if (!hasInterface) exitWith {
     diag_log text "[TLB Interactions] postInit: headless - no interaction hook needed";
 };
 
+// Rebindable under Configure Addons. The board checks this binding itself
+// (fn_keyMatches), because a dialog does not pass key presses to CBA.
+[
+    "TLB Interactions", "tlbi_defusal_seatPin",
+    [localize "STR_tlbi_defusal_key_seatPin", localize "STR_tlbi_defusal_key_seatPin_desc"],
+    {false}, {false}, [57, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
+// Zeus Explosive settings module, when Zeus Enhanced is loaded.
+if (isClass (configFile >> "CfgPatches" >> "zen_custom_modules")) then {
+    ["TLB Interactions", "STR_tlbi_defusal_module_name", {_this call tlbi_defusal_fnc_zeusExplosive}, "\tlbi\addons\main\data\logo_small_ca.paa"] call zen_custom_modules_fnc_register;
+};
+
+// Zeus context menu (Zeus Enhanced): "Explosive settings" when the cursor is on or
+// near an explosive. ZEN passes [position ASL, objects, groups, waypoints,
+// markers, hovered entity, arguments].
+if (isClass (configFile >> "CfgPatches" >> "zen_context_menu")) then {
+    [[
+        "tlbi_explosiveSettings", localize "STR_tlbi_defusal_module_name", "\tlbi\addons\main\data\logo_small_ca.paa",
+        {
+            params ["_position", "", "", "", "", "_hovered"];
+            [_position, _hovered] call tlbi_defusal_fnc_zeusExplosive;
+        },
+        {
+            params ["_position", "", "", "", "", "_hovered"];
+            !isNull ([_position, _hovered] call tlbi_defusal_fnc_findExplosive)
+        }
+    ] call zen_context_menu_fnc_createAction, [], 0] call zen_context_menu_fnc_addAction;
+};
+
 private _fnc_replaceDefuseAction = {
     params ["_class", "_distance"];
 

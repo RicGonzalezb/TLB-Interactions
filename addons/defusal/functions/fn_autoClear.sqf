@@ -18,7 +18,8 @@
  * None
  */
 
-if !(missionNamespace getVariable ["tlbi_defusal_autoClear", false]) exitWith {};
+// Set per board by fn_openBoard: the setting, or an Explosive settings module.
+if !(uiNamespace getVariable ["tlbi_defusal_autoClearNow", false]) exitWith {};
 if (isNull (uiNamespace getVariable ["tlbi_defusal_display", displayNull])) exitWith {};
 if (uiNamespace getVariable ["tlbi_defusal_busy", false]) exitWith {};
 if (uiNamespace getVariable ["tlbi_defusal_resolved", false]) exitWith {};

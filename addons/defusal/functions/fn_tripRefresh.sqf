@@ -75,15 +75,15 @@ private _tensionText = localize ([
 ] select _working);
 
 if (_pinning) then {
-    (_display displayCtrl IDC_READOUT) ctrlSetText format [localize "STR_tlbi_defusal_lcd_pin", _slips, PIN_SLIPS];
+    (_display displayCtrl IDC_READOUT) ctrlSetText format [localize "STR_tlbi_defusal_lcd_pin", _slips, PIN_SLIPS, toUpper (["tlbi_defusal_seatPin"] call tlbi_defusal_fnc_keyName)];
 };
 
 (_display displayCtrl IDC_STAGE) ctrlSetText localize (["STR_tlbi_defusal_trip_stage_trace", "STR_tlbi_defusal_trip_stage_work"] select _working);
 
 if (!_busy || _pinning) then {
-    [localize (call {
+    [format [localize (call {
         if (!_working) exitWith { "STR_tlbi_defusal_trip_msg_trace" };
         if (_pinning) exitWith { "STR_tlbi_defusal_pin_msg_hold" };
         "STR_tlbi_defusal_trip_msg_work"
-    })] call tlbi_defusal_fnc_setStatus;
+    }), ["tlbi_defusal_seatPin"] call tlbi_defusal_fnc_keyName]] call tlbi_defusal_fnc_setStatus;
 };

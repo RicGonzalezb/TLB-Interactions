@@ -88,7 +88,9 @@ private _cables = [];
 // no two devices are buried the same way.
 private _dirt = [];
 
-if (tlbi_defusal_excavation) then {
+private _buried = [_explosive, "Buried", -1] call tlbi_defusal_fnc_explosiveValue;
+
+if ([tlbi_defusal_excavation, _buried == 1] select (_buried >= 0)) then {
     for "_row" from 0 to 1 do {
         for "_col" from 0 to 5 do {
             _dirt pushBack [

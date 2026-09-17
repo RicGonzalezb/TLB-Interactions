@@ -33,8 +33,20 @@ private _fuzes = [[_fuzeX, _wireY, false]];
 private _branch = [];
 private _tufts = [];
 
+// Grass: an Explosive settings module decides, otherwise tripwires indoors follow
+// the "Grass on tripwires inside buildings" setting. Without grass the wire
+// starts traced.
+private _where = getPos _explosive;
+private _grassModule = [_explosive, "Grass", -1] call tlbi_defusal_fnc_explosiveValue;
+private _hasGrass = [
+    tlbi_defusal_tripIndoorGrass || {!([_explosive] call tlbi_defusal_fnc_isIndoors)},
+    _grassModule == 1
+] select (_grassModule >= 0);
+private _branchModule = [_explosive, "Branch", -1] call tlbi_defusal_fnc_explosiveValue;
+
 private _fnc_tuft = {
     params ["_tx", "_ty", "_onPath"];
+    if (!_hasGrass) exitWith {};
     _tufts pushBack [_tx, _ty, 0.11 + random 0.035, floor random 3, false, _onPath];
 };
 
@@ -46,7 +58,7 @@ for "_t" from 0 to 9 do {
     [_x0 + (_x1 - _x0) * _t / 9, _wireY + random [-0.04, 0, 0.04], true] call _fnc_tuft;
 };
 
-if (random 1 < tlbi_defusal_branchChance * DIFF(DIFF_BRANCH)) then {
+if ([random 1 < tlbi_defusal_branchChance * DIFF(DIFF_BRANCH), _branchModule == 1] select (_branchModule >= 0)) then {
     private _jx = 0.34 + random 0.22;
     private _up = random 1 < 0.5;
     private _bx = _jx + 0.22;
@@ -77,7 +89,7 @@ for "_i" from 1 to 10 do {
     [0.04 + random 0.92, 0.08 + random 0.84, false] call _fnc_tuft;
 };
 
-private _trip = [_left, _wireY, _taut, _fuzes, _branch, _tufts, TSTAGE_TRACE, -1, 0];
+private _trip = [_left, _wireY, _taut, _fuzes, _branch, _tufts, [TSTAGE_TRACE, TSTAGE_WORK] select (count _tufts == 0), -1, 0];
 
 _explosive setVariable ["tlbi_defusal_trip", _trip, true];
 _explosive setVariable ["tlbi_defusal_elapsed", 0, true];

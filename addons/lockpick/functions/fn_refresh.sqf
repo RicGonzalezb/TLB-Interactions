@@ -42,4 +42,10 @@ private _labels = [
     _button ctrlEnable (_key != "");
 } forEach [IDC_LP_BTN_A1, IDC_LP_BTN_A2, IDC_LP_BTN_A3];
 
-[localize (["STR_tlbi_lockpick_help_pins", "STR_tlbi_lockpick_help_rake", "STR_tlbi_lockpick_help_dial"] select _tech)] call tlbi_lockpick_fnc_setStatus;
+[format [
+    localize (["STR_tlbi_lockpick_help_pins", "STR_tlbi_lockpick_help_rake", "STR_tlbi_lockpick_help_dial"] select _tech),
+    ["tlbi_lockpick_left"] call tlbi_defusal_fnc_keyName,
+    ["tlbi_lockpick_right"] call tlbi_defusal_fnc_keyName,
+    ["tlbi_lockpick_hold"] call tlbi_defusal_fnc_keyName,
+    ["tlbi_lockpick_rake"] call tlbi_defusal_fnc_keyName
+]] call tlbi_lockpick_fnc_setStatus;

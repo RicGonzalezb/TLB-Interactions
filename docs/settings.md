@@ -5,7 +5,8 @@
 Every setting is a CBA setting under **Options → Addon Options → TLB
 Interactions**, and every one is **server-forced**: the server (or the mission)
 decides, not individual players. Saved CBA settings override new defaults, so
-check them after updating the mod.
+check them after updating the mod. To change them for one part of a mission,
+use the [modules](modules.md).
 
 The *Variable* column is the CBA setting name, for `cba_settings.sqf` and mission
 settings files.
@@ -19,6 +20,7 @@ settings files.
 - [Lockpicking - Pin tumbler / Rake / Sweet spot](#lockpicking---pin-tumbler--rake--sweet-spot)
 - [Lockpicking levels](#lockpicking-levels)
 - [Lockpicking - Doors without tsp_breach](#lockpicking---doors-without-tsp_breach)
+- [Keybinds](#keybinds)
 - [Example settings file](#example-settings-file)
 
 ---
@@ -80,6 +82,7 @@ the decision are written to the RPT when its board opens:
 | Part grass time (s) | `tlbi_defusal_grassTime` | 0.7 | 0.2 to 5 | Parting one tuft of grass. |
 | Tension check time (s) | `tlbi_defusal_tensionTime` | 2 | 0.5 to 8 | Feeling the wire for tension. |
 | Branch to a second device | `tlbi_defusal_branchChance` | 30% | 0 to 100% | Chance a tripwire branches to a second firing device. |
+| Grass on tripwires inside buildings | `tlbi_defusal_tripIndoorGrass` | on | on / off | Off: a tripwire under a roof has no grass and starts traced. An Explosive settings module overrides this in its area. |
 
 ## Defusal difficulty
 
@@ -192,6 +195,23 @@ system and settings apply and these are ignored.
 | Buildings with locked doors | `tlbi_lockpick_lockHouses` | 25% | 0 to 100% | Chance a building has any locked doors. Every player sees the same doors locked. |
 | Locked doors in those buildings | `tlbi_lockpick_lockDoors` | 50% | 0 to 100% | Chance each door of such a building is locked. Doors the mission already set are left alone. |
 | Never lock these buildings | `tlbi_lockpick_lockBlacklist` | empty | text | Building classes never locked at random. `*` at the end matches a prefix. |
+
+---
+
+## Keybinds
+
+Under **Options → Controls → Configure Addons → TLB Interactions**. Keybinds are
+per player, not server settings. On-screen hints show the key you have bound.
+
+| Action | Default | Used for |
+| --- | --- | --- |
+| Seat pin (hold) | Space | Pushing a safety pin into a mine or tripwire device |
+| Lockpicking: previous pin / pick left | A | Choosing a pin, or swinging the pick left |
+| Lockpicking: next pin / pick right | D | Choosing a pin, or swinging the pick right |
+| Lockpicking: lift, tension or turn (hold) | Space | Lifting a pin, holding tension, turning the plug |
+| Lockpicking: rake | R | A rake stroke |
+
+<kbd>Esc</kbd> always closes a board, and the board buttons can be held instead of the keys.
 
 ---
 

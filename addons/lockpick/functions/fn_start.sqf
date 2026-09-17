@@ -27,7 +27,26 @@ params ["_unit", "_house", "_door", "_tool", "_item", "_unlock", "_unlockArgs"];
 if (!isNull (uiNamespace getVariable ["tlbi_lockpick_display", displayNull])) exitWith { false };
 if (!alive _unit || {isNull _house} || {_item == ""}) exitWith { false };
 
-private _class = [_house, _door] call tlbi_lockpick_fnc_doorClass;
+// A Lock settings module covering the door handle can override the lock.
+private _doorPos = _house modelToWorld (_house selectionPosition _door);
+if ((_house selectionPosition _door) isEqualTo [0, 0, 0]) then { _doorPos = getPos _unit };
+// Zeus Lock settings on this door win, then the Eden module covering the handle.
+// Stored order: Pickable, Technique, DoorClass, KitLevel, ClipLevel.
+private _zeus = _house getVariable [[_door] call tlbi_lockpick_fnc_doorKey, []];
+private _fnc_module = {
+    params ["_name"];
+    private _value = _zeus param [["Pickable", "Technique", "DoorClass", "KitLevel", "ClipLevel"] find _name, -1];
+    if (_value isEqualType 0 && {_value >= 0}) exitWith { _value };
+    ["tlbi_moduleLock", _doorPos, _name, -1] call tlbi_defusal_fnc_moduleValue
+};
+
+if ((["Pickable"] call _fnc_module) == 0) exitWith {
+    [localize "STR_tlbi_lockpick_msg_unpickable"] call ace_common_fnc_displayTextStructured;
+    false
+};
+
+private _classModule = ["DoorClass"] call _fnc_module;
+private _class = [[_house, _door] call tlbi_lockpick_fnc_doorClass, _classModule min DOOR_REINFORCED] select (_classModule >= 0);
 
 if (_class == DOOR_GLASS) exitWith {
     [localize "STR_tlbi_lockpick_msg_glass"] call ace_common_fnc_displayTextStructured;
@@ -54,10 +73,15 @@ if (_tech < 0) then {
     _house setVariable [_techVar, _tech, true];
 };
 
+private _techModule = ["Technique"] call _fnc_module;
+if (_techModule >= 0) then { _tech = _techModule min TECH_DIAL };
+
 // The technique's difficulty level for this tool picks a preset row (fn_preInit),
 // the technique's fine-tuning sliders scale it, and the door class tightens it.
 private _key = ["pins", "rake", "dial"] select _tech;
 private _level = round (missionNamespace getVariable [format ["tlbi_lockpick_%1%2", _key, _toolSuffix], [2, 3] select _tool]);
+private _levelModule = [["KitLevel", "ClipLevel"] select _tool] call _fnc_module;
+if (_levelModule >= 0) then { _level = _levelModule };
 _level = (_level max 0) min 4;
 
 private _scale = tlbi_lockpick_classScale select _class;
@@ -172,21 +196,21 @@ if (_tech == TECH_DIAL) then {
     (uiNamespace getVariable ["tlbi_lockpick_display", displayNull]) closeDisplay 2;
 }];
 
+// Keys come from the lockpicking keybinds (Configure Addons).
 private _fnc_key = {
-    params ["_key"];
-    switch (true) do {
-        case (_key in [KEY_A, KEY_LEFT]): { "left" };
-        case (_key in [KEY_D, KEY_RIGHT]): { "right" };
-        case (_key in [KEY_W, KEY_SPACE]): { "hold" };
-        case (_key == KEY_R): { "rake" };
-        default { "" };
-    }
+    params ["_key", ["_shift", false], ["_ctrl", false], ["_alt", false], ["_anyModifiers", false]];
+    private _found = "";
+    {
+        _x params ["_input", "_action"];
+        if ([_action, _key, _shift, _ctrl, _alt, _anyModifiers] call tlbi_defusal_fnc_keyMatches) exitWith { _found = _input };
+    } forEach [["hold", "tlbi_lockpick_hold"], ["left", "tlbi_lockpick_left"], ["right", "tlbi_lockpick_right"], ["rake", "tlbi_lockpick_rake"]];
+    _found
 };
 uiNamespace setVariable ["tlbi_lockpick_keyMap", _fnc_key];
 
 _display displayAddEventHandler ["KeyDown", {
-    params ["", "_key"];
-    private _input = [_key] call (uiNamespace getVariable ["tlbi_lockpick_keyMap", {""}]);
+    params ["", "_key", "_shift", "_ctrl", "_alt"];
+    private _input = [_key, _shift, _ctrl, _alt] call (uiNamespace getVariable ["tlbi_lockpick_keyMap", {""}]);
     if (_input == "") exitWith { false };
     [_input, true] call tlbi_lockpick_fnc_press;
     true
@@ -194,7 +218,7 @@ _display displayAddEventHandler ["KeyDown", {
 
 _display displayAddEventHandler ["KeyUp", {
     params ["", "_key"];
-    private _input = [_key] call (uiNamespace getVariable ["tlbi_lockpick_keyMap", {""}]);
+    private _input = [_key, false, false, false, true] call (uiNamespace getVariable ["tlbi_lockpick_keyMap", {""}]);
     if (_input == "") exitWith { false };
     [_input, false] call tlbi_lockpick_fnc_press;
     true

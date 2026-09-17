@@ -34,6 +34,7 @@ tlbi_defusal_pinSlips = 2;
 tlbi_defusal_grassTime = 0.7;
 tlbi_defusal_tensionTime = 2;
 tlbi_defusal_branchChance = 0.3;
+tlbi_defusal_tripIndoorGrass = true;
 
 // Difficulty presets. Every slider below stays the base value; the preset
 // adjusts it where it is used (see DIFF_* in script_component.hpp):
@@ -243,6 +244,12 @@ tlbi_defusal_palette = [
     "tlbi_defusal_branchChance", "SLIDER",
     ["$STR_tlbi_defusal_set_branchChance", "$STR_tlbi_defusal_set_branchChance_desc"],
     TRIP_CATEGORY, [0, 1, 0.3, 0, true], 1
+] call CBA_fnc_addSetting;
+
+[
+    "tlbi_defusal_tripIndoorGrass", "CHECKBOX",
+    ["$STR_tlbi_defusal_set_tripIndoorGrass", "$STR_tlbi_defusal_set_tripIndoorGrass_desc"],
+    TRIP_CATEGORY, true, 1
 ] call CBA_fnc_addSetting;
 
 diag_log text "[TLB Interactions] preInit: done";

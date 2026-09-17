@@ -136,13 +136,13 @@
                 <English>TOOL %1 - CLICK THE SOIL</English>
             </Key>
             <Key ID="STR_tlbi_defusal_lcd_pin">
-                <English>SLIPS %1/%2 - HOLD SPACE</English>
+                <English>SLIPS %1/%2 - HOLD %3</English>
             </Key>
             <Key ID="STR_tlbi_defusal_mine_msg_locate">
                 <English>Prod the soil to find the mine - a red flag means metal. Dig out the eight cells around it, never the one on top.</English>
             </Key>
             <Key ID="STR_tlbi_defusal_mine_msg_exposed">
-                <English>The mine is dug out and the fuze is clear. Click SEAT PIN, then hold Space to push the pin in.</English>
+                <English>The mine is dug out and the fuze is clear. Click SEAT PIN, then hold %1 to push the pin in.</English>
             </Key>
             <Key ID="STR_tlbi_defusal_mine_msg_plate_prod">
                 <English>The prod came down on the pressure plate.</English>
@@ -160,10 +160,10 @@
                 <English>Wire cut. The device is safe.</English>
             </Key>
             <Key ID="STR_tlbi_defusal_pin_gauge">
-                <English>HOLD SPACE - KEEP THE NEEDLE IN THE BAND</English>
+                <English>HOLD %1 - KEEP THE NEEDLE IN THE BAND</English>
             </Key>
             <Key ID="STR_tlbi_defusal_pin_msg_hold">
-                <English>Hold Space, or hold the button, to push the pin in. Ease off whenever the needle drifts toward the edge.</English>
+                <English>Hold %1, or hold the button, to push the pin in. Ease off whenever the needle drifts toward the edge.</English>
             </Key>
             <Key ID="STR_tlbi_defusal_pin_msg_slip">
                 <English>The pin slipped - %1 of %2 slips used.</English>
@@ -472,6 +472,117 @@
             </Key>
             <Key ID="STR_tlbi_defusal_set_aceExplode_desc">
                 <English>Off by default: cutting the correct conductor is always safe, because the player earned it. Turn on to also roll ACE's own explode-on-defuse chance on a successful cut.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_key_seatPin">
+                <English>Seat pin (hold)</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_key_seatPin_desc">
+                <English>Hold to push a safety pin into a mine or tripwire device.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_key_unbound">
+                <English>unbound</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_tripIndoorGrass">
+                <English>Grass on tripwires inside buildings</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_set_tripIndoorGrass_desc">
+                <English>Off: a tripwire under a roof has no grass and starts traced. An Explosive settings module overrides this for its area.</English>
+            </Key>
+            <Key ID="STR_tlbi_module_category">
+                <English>TLB Interactions</English>
+            </Key>
+            <Key ID="STR_tlbi_module_useSettings">
+                <English>Use settings</English>
+            </Key>
+            <Key ID="STR_tlbi_module_on">
+                <English>On</English>
+            </Key>
+            <Key ID="STR_tlbi_module_off">
+                <English>Off</English>
+            </Key>
+            <Key ID="STR_tlbi_module_yes">
+                <English>Yes</English>
+            </Key>
+            <Key ID="STR_tlbi_module_no">
+                <English>No</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_name">
+                <English>Explosive settings</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_desc">
+                <English>Overrides the defusal settings for every explosive inside this module's area, including explosives placed later. Resize the area over a building or a stretch of road. Where areas overlap, the smallest one wins.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_procedure">
+                <English>Procedure</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_procedure_tip">
+                <English>Force the procedure for explosives in the area.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_procedure_auto">
+                <English>Automatic</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_procedure_ied">
+                <English>IED</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_procedure_mine">
+                <English>Mine</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_procedure_trip">
+                <English>Tripwire</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_difficulty_tip">
+                <English>Replaces the defusal Difficulty setting for explosives in the area.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_buried">
+                <English>IED burial</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_buried_tip">
+                <English>Whether IEDs in the area start under soil.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_buried_yes">
+                <English>Buried</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_buried_no">
+                <English>Not buried</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_grass">
+                <English>Tripwire grass</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_grass_tip">
+                <English>Without grass the wire is visible from the start and the trace step is skipped.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_grass_yes">
+                <English>Grass</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_grass_no">
+                <English>No grass</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_branch">
+                <English>Tripwire branch</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_branch_tip">
+                <English>Whether tripwires in the area lead to a second device.</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_branch_always">
+                <English>Always</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_branch_never">
+                <English>Never</English>
+            </Key>
+            <Key ID="STR_tlbi_defusal_module_autoClear_tip">
+                <English>Whether soil, mine rims and grass clear themselves for explosives in the area.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_noExplosive">
+                <English>Place the module on an explosive.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_explosiveApplied">
+                <English>Explosive settings applied.</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_rebuild">
+                <English>Rebuild the device</English>
+            </Key>
+            <Key ID="STR_tlbi_zeus_rebuild_tip">
+                <English>Start the device again with these settings. Any progress on it is lost. Needed for procedure, burial, grass and branch on a device someone has already opened.</English>
             </Key>
         </Container>
     </Package>

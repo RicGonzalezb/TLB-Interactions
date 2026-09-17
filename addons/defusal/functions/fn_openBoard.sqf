@@ -21,6 +21,13 @@ if (!alive _unit || {isNull _explosive}) exitWith { false };
 
 private _kind = [_explosive] call tlbi_defusal_fnc_classify;
 
+// Per-device options from an Explosive settings module, for this board.
+private _where = getPos _explosive;
+private _level = [_explosive, "Difficulty", tlbi_defusal_difficulty] call tlbi_defusal_fnc_explosiveValue;
+private _autoClear = [_explosive, "AutoClear", -1] call tlbi_defusal_fnc_explosiveValue;
+uiNamespace setVariable ["tlbi_defusal_level", _level];
+uiNamespace setVariable ["tlbi_defusal_autoClearNow", [tlbi_defusal_autoClear, _autoClear == 1] select (_autoClear >= 0)];
+
 private _variable = ["tlbi_defusal_puzzle", "tlbi_defusal_mine", "tlbi_defusal_trip"] select _kind;
 private _state = _explosive getVariable [_variable, []];
 
@@ -119,10 +126,10 @@ if (_name == "") then { _name = typeOf _explosive };
 }];
 
 _display displayAddEventHandler ["KeyDown", {
-    params ["", "_key"];
+    params ["", "_key", "_shift", "_ctrl", "_alt"];
 
-    // Space holds the pin in while one is being seated.
-    if (_key == 57 && {uiNamespace getVariable ["tlbi_defusal_pinning", false]}) exitWith {
+    // The Seat pin keybind holds the pin in while one is being seated.
+    if ((uiNamespace getVariable ["tlbi_defusal_pinning", false]) && {["tlbi_defusal_seatPin", _key, _shift, _ctrl, _alt] call tlbi_defusal_fnc_keyMatches}) exitWith {
         uiNamespace setVariable ["tlbi_defusal_holding", true];
         true
     };
@@ -134,7 +141,7 @@ _display displayAddEventHandler ["KeyDown", {
 _display displayAddEventHandler ["KeyUp", {
     params ["", "_key"];
 
-    if (_key == 57) exitWith {
+    if (["tlbi_defusal_seatPin", _key, false, false, false, true] call tlbi_defusal_fnc_keyMatches) exitWith {
         uiNamespace setVariable ["tlbi_defusal_holding", false];
         true
     };

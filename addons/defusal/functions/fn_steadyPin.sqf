@@ -66,7 +66,7 @@ private _label = _display ctrlCreate ["tlbi_RscTextCenter", -1];
 _label ctrlSetPosition [_bx + 0.27 * _bw, _by + 0.655 * _bh, 0.46 * _bw, 0.07 * _bh];
 _label ctrlSetFont "PuristaMedium";
 _label ctrlSetFontHeight (0.021 * safezoneH);
-_label ctrlSetText localize "STR_tlbi_defusal_pin_gauge";
+_label ctrlSetText format [localize "STR_tlbi_defusal_pin_gauge", toUpper (["tlbi_defusal_seatPin"] call tlbi_defusal_fnc_keyName)];
 _label ctrlCommit 0;
 
 private _gauge = [_frame, _track, _band, _needle, _back, _fill, _label];

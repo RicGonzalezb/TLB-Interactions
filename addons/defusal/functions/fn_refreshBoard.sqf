@@ -15,7 +15,7 @@
 // Auto-clear (setting): queue the next clump, rim cell or tuft for the frame
 // after this refresh, once any action callback has stored its result. Only one
 // call is ever queued; fn_autoClear does nothing while an action is running.
-if ((missionNamespace getVariable ["tlbi_defusal_autoClear", false]) && {!(uiNamespace getVariable ["tlbi_defusal_autoQueued", false])}) then {
+if ((uiNamespace getVariable ["tlbi_defusal_autoClearNow", false]) && {!(uiNamespace getVariable ["tlbi_defusal_autoQueued", false])}) then {
     uiNamespace setVariable ["tlbi_defusal_autoQueued", true];
     [{
         uiNamespace setVariable ["tlbi_defusal_autoQueued", false];

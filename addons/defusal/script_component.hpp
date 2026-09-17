@@ -143,7 +143,9 @@
 // --- Difficulty -------------------------------------------------------------
 // The Difficulty setting picks a row of tlbi_defusal_difficultyTable (fn_preInit).
 // Each column adjusts a base setting where it is used.
-#define DIFF(var1)      ((tlbi_defusal_difficultyTable select ((round tlbi_defusal_difficulty) max 0 min 3)) select var1)
+// The level for the board that is open: an Explosive settings module can set it
+// per device (fn_openBoard), otherwise it is the Difficulty setting.
+#define DIFF(var1)      ((tlbi_defusal_difficultyTable select ((round (uiNamespace getVariable ["tlbi_defusal_level", tlbi_defusal_difficulty])) max 0 min 3)) select var1)
 #define DIFF_WIRES      0   // extra conductors on an IED
 #define DIFF_RISK       1   // multiplies the continuity-test detonation risk
 #define DIFF_PLATE      2   // multiplies the risk of prodding a mine's plate

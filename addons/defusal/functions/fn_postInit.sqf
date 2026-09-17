@@ -45,6 +45,14 @@ if (!hasInterface) exitWith {
     diag_log text "[TLB Interactions] postInit: headless - no interaction hook needed";
 };
 
+// Rebindable under Configure Addons. The board checks this binding itself
+// (fn_keyMatches), because a dialog does not pass key presses to CBA.
+[
+    "TLB Interactions", "tlbi_defusal_seatPin",
+    [localize "STR_tlbi_defusal_key_seatPin", localize "STR_tlbi_defusal_key_seatPin_desc"],
+    {false}, {false}, [57, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
 private _fnc_replaceDefuseAction = {
     params ["_class", "_distance"];
 

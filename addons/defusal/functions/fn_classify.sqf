@@ -35,6 +35,14 @@ private _class = typeOf _explosive;
 private _lower = toLower _class;
 private _ammo = configFile >> "CfgAmmo";
 
+// An Explosive settings module covering the device decides first.
+private _forced = ["tlbi_moduleExplosive", getPos _explosive, "Procedure", -1] call tlbi_defusal_fnc_moduleValue;
+if (_forced >= 0) exitWith {
+    _forced = _forced min KIND_TRIP;
+    diag_log text format ["[TLB Interactions] %1 classified as %2 (module)", _class, ["IED", "mine", "tripwire"] select _forced];
+    _forced
+};
+
 private _fnc_listed = {
     params ["_setting"];
 

@@ -19,6 +19,7 @@ what happens under the hood.
 - [The built-in door system](#the-built-in-door-system)
 - [Stand-in items](#stand-in-items)
 - [Drawing the boards](#drawing-the-boards)
+- [Modules and keybinds](#modules-and-keybinds)
 - [Logging](#logging)
 
 ---
@@ -299,6 +300,22 @@ created at runtime, so rotated pieces render as a staircase.
 - Clickable parts are invisible buttons placed over the textures.
 
 Sounds are referenced from ACE and tsp_breach rather than shipped.
+
+## Modules and keybinds
+
+**Modules.** `tlbi_moduleExplosive` and `tlbi_moduleLock` are Eden modules with an
+area. `fn_moduleValue` finds every module of a class whose `objectArea` contains a
+position, takes the smallest, and returns its option, or the caller's default when
+the option is *Use settings*. Explosive options are read when a board opens (the
+procedure in `fn_classify`, difficulty and auto-clear in `fn_openBoard`, burial,
+grass and branch in the generators), so modules also cover explosives placed later.
+Lock options are read in `fn_start`, except the lock state, which `fn_moduleLock`
+applies on the server a few seconds into the mission.
+
+**Keybinds.** The keys are CBA keybinds, registered at postInit so they can be
+rebound in Configure Addons. A dialog does not pass key presses on to CBA's
+keybind handler, so the boards compare their own key events against the bindings
+with `fn_keyMatches`, and `fn_keyName` puts the bound key into on-screen hints.
 
 ## Logging
 

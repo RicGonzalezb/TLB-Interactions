@@ -16,6 +16,24 @@
 
 diag_log text "[TLB Interactions] lockpick postInit";
 
+// Rebindable under Configure Addons. The board checks these bindings itself
+// (tlbi_defusal_fnc_keyMatches), because a dialog does not pass key presses to CBA.
+if (hasInterface) then {
+    {
+        _x params ["_action", "_title", "_dik"];
+        [
+            "TLB Interactions", _action,
+            [localize _title, localize (_title + "_desc")],
+            {false}, {false}, [_dik, [false, false, false]]
+        ] call CBA_fnc_addKeybind;
+    } forEach [
+        ["tlbi_lockpick_left", "STR_tlbi_lockpick_key_left", 30],
+        ["tlbi_lockpick_right", "STR_tlbi_lockpick_key_right", 32],
+        ["tlbi_lockpick_hold", "STR_tlbi_lockpick_key_hold", 57],
+        ["tlbi_lockpick_rake", "STR_tlbi_lockpick_key_rake", 19]
+    ];
+};
+
 tlbi_lockpick_tspLoaded = isClass (configFile >> "CfgPatches" >> "tsp_breach");
 
 if (tlbi_lockpick_tspLoaded) exitWith {

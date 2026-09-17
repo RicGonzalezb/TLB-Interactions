@@ -46,7 +46,8 @@ The board's title tells you what you are working on: **IED**, **Mine** or
 | Remote, timer, magnetic or IR | Demo charges, satchels, command-detonated claymores, SLAMs | IED. You are defeating a firing circuit |
 
 Mission makers can force any explosive onto a procedure; see
-[Device types](settings.md#interactive-defusal---device-types).
+[Device types](settings.md#interactive-defusal---device-types), or place an
+[Explosive settings module](modules.md#explosive-settings).
 
 ## The board
 
@@ -229,7 +230,7 @@ Mines and tripwire devices are made safe by seating a safety pin. Press **Seat
 pin** and a gauge appears: a needle wandering across a track with a green band
 in the middle, and a progress bar underneath.
 
-1. **Hold to push.** Hold <kbd>Space</kbd>, or hold the **Seat pin** button. The
+1. **Hold to push.** Hold <kbd>Space</kbd> (rebindable, see [Keybinds](settings.md#keybinds)), or hold the **Seat pin** button. The
    pin goes in while you hold, but a hand under effort shakes, so the needle
    wanders much harder.
 2. **Ease off before the edge.** Let go and the needle settles back towards the

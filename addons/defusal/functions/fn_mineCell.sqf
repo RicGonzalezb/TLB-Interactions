@@ -100,6 +100,6 @@ private _digging = _tool == TOOL_DIG;
         [] call tlbi_defusal_fnc_refreshBoard;
 
         if (_plate) then { [localize "STR_tlbi_defusal_mine_msg_plate_at"] call tlbi_defusal_fnc_setStatus };
-        if (_exposed) then { [localize "STR_tlbi_defusal_mine_msg_exposed"] call tlbi_defusal_fnc_setStatus };
+        if (_exposed) then { [format [localize "STR_tlbi_defusal_mine_msg_exposed", ["tlbi_defusal_seatPin"] call tlbi_defusal_fnc_keyName]] call tlbi_defusal_fnc_setStatus };
     }
 ] call tlbi_defusal_fnc_runAction;

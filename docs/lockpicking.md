@@ -74,7 +74,8 @@ technique, a hint line, three buttons and **Back away**.
 | <kbd>R</kbd> | - | rake | - |
 | <kbd>Esc</kbd> or **Back away** | close the board | | |
 
-Buttons can be **held** exactly like the keys. Walking more than 4 m away, dying
+Buttons can be **held** exactly like the keys. The keys shown are the defaults;
+rebind them under *Configure Addons* (see [Keybinds](settings.md#keybinds)). Walking more than 4 m away, dying
 or getting into a vehicle closes the board. Progress on a lock is **not** kept
 when the board closes. Once the tension wrench comes out, set pins fall back.
 
@@ -173,6 +174,9 @@ reinforced lists are used as well.
 Locks use the vanilla variables `bis_disabled_Door_N` (1 = locked) on the
 building, so doors locked by a mission, by Eden attributes or by another script
 are pickable too, and a picked door is unlocked for everyone.
+
+Mission makers can lock, unlock and configure specific doors with the
+[Lock settings module](modules.md#lock-settings).
 
 ## Doors with tsp_breach
 

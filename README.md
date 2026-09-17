@@ -11,11 +11,12 @@
 
 <p align="center">
   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3801718055"><strong>Steam Workshop</strong></a> ·
+  <a href="https://github.com/TLB-MilSim/TLB-Interactions/releases/latest"><strong>Download</strong></a> ·
   <a href="docs/defusal.md">Defusal guide</a> ·
   <a href="docs/lockpicking.md">Lockpicking &amp; doors</a> ·
-  <a href="docs/settings.md">All settings</a> ·
   <a href="docs/modules.md">Modules</a> ·
-  <a href="docs/how-it-works.md">How it works</a>
+  <a href="docs/settings.md">All settings</a> ·
+  <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 <p align="center">
@@ -23,6 +24,15 @@
 </p>
 
 ---
+
+## What's new in 1.1.0
+
+- **Eden modules:** *Explosive settings* and *Lock settings* configure every explosive or door inside their area.
+- **Zeus modules and context menu:** the same options for one explosive or door in a live mission (needs Zeus Enhanced).
+- **Rebindable keys:** Seat pin and the lockpicking controls, in Configure Addons.
+- **New setting:** *Grass on tripwires inside buildings*.
+
+See the [changelog](CHANGELOG.md) for details and screenshots.
 
 ## What it is
 
@@ -48,8 +58,13 @@ sweet spot), and a paperclip bends with every mistake and snaps on the third.
 Doors always work: with **tsp_breach** loaded its door system is used; without
 it, TLB Interactions runs its own door menu and random door locking.
 
-Everything is configurable through CBA settings, down to separate difficulty
-levels for each lockpicking technique with each tool.
+**Mission makers and Zeus.** *Explosive settings* and *Lock settings* modules
+change how the explosives and doors in one area behave in Eden, or configure a
+single explosive or door in a live mission from Zeus.
+
+Everything else is configurable through CBA settings, down to separate
+difficulty levels for each lockpicking technique with each tool, and every key
+can be rebound.
 
 ## Screenshots
 
@@ -78,7 +93,13 @@ levels for each lockpicking technique with each tool.
 | --- | --- | --- |
 | <img src="docs/images/lockpick-pins.jpg" alt="Pin tumbler cut-away with two pins set" width="270"> | <img src="docs/images/lockpick-rake.jpg" alt="Rake with the tension gauge" width="270"> | <img src="docs/images/lockpick-sweetspot.jpg" alt="Sweet spot lock face with the strain gauge" width="270"> |
 
-<sub>Board images are rendered from the mod's own textures and board layout. In game the board opens over the game view.</sub>
+**Modules**, in Eden and Zeus
+
+| Eden: Explosive settings | Zeus: context menu | Zeus: Lock settings |
+| --- | --- | --- |
+| <img src="docs/images/eden-explosive-module.jpg" alt="Explosive settings module attributes in Eden" width="270"> | <img src="docs/images/zeus-lock-menu.jpg" alt="Lock settings in the Zeus context menu" width="270"> | <img src="docs/images/zeus-lock-dialog.jpg" alt="Zeus Lock settings dialog" width="270"> |
+
+<sub>Board images are rendered from the mod's own textures and board layout. Module images are in-game screenshots.</sub>
 
 ## Requirements
 
@@ -88,13 +109,17 @@ levels for each lockpicking technique with each tool.
 | [CBA_A3](https://steamcommunity.com/workshop/filedetails/?id=450814997) | required |
 | [ACE3](https://steamcommunity.com/workshop/filedetails/?id=463939057) | required |
 | [Breach - Rewrite](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995) (tsp_breach) | optional. Its door actions, locking and items are used when loaded |
+| [Zeus Enhanced](https://steamcommunity.com/workshop/filedetails/?id=1779063631) | optional. Needed for the Zeus modules and context menu entries |
 
 ## Installation
 
-1. Subscribe on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3801718055).
+1. Subscribe on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3801718055),
+   or download the signed build from the [latest release](https://github.com/TLB-MilSim/TLB-Interactions/releases/latest).
 2. Load it together with CBA_A3 and ACE3.
 3. On a server, load it on the server **and** every client. All settings are
    server-forced, and the boards run on the client.
+4. For servers that verify signatures, copy `keys/TLBInteractions01.bikey` into
+   the server's `keys` folder.
 
 ## Quick start
 
@@ -106,12 +131,17 @@ off and come back, or hand it to a team mate. Full walkthrough:
 
 **Picking a lock:** carry a lock pick kit or a paperclip, open the ACE
 interaction menu at a locked door and choose *Pick lock* (or tsp_breach's *Use
-Lockpick* / *Use Paperclip*). Controls on the board: <kbd>A</kbd>/<kbd>D</kbd> to
-move, hold <kbd>W</kbd> or <kbd>Space</kbd>, <kbd>R</kbd> to rake, <kbd>Esc</kbd>
-to back away. Full walkthrough: [Lockpicking & doors](docs/lockpicking.md).
+Lockpick* / *Use Paperclip*). Default controls on the board: <kbd>A</kbd>/<kbd>D</kbd>
+to move, hold <kbd>Space</kbd>, <kbd>R</kbd> to rake, <kbd>Esc</kbd> to back away.
+Full walkthrough: [Lockpicking & doors](docs/lockpicking.md).
 
-**Configuring:** *Options → Addon Options → TLB Interactions*. Every setting,
-its default and its range: [All settings](docs/settings.md).
+**Mission making:** place *Explosive settings* or *Lock settings* from **Systems
+(F5) → Modules → TLB Interactions** in Eden, or point at an explosive or door in
+Zeus and open the context menu. See [Modules](docs/modules.md).
+
+**Configuring:** settings are under *Options → Addon Options → TLB Interactions*,
+keys under *Options → Controls → Configure Addons → TLB Interactions*. Every
+setting, its default and its range: [All settings](docs/settings.md).
 
 ## Documentation
 
@@ -120,7 +150,7 @@ its default and its range: [All settings](docs/settings.md).
 | [Defusal guide](docs/defusal.md) | Players: every stage of the IED, mine and tripwire procedures, what the readings mean, what kills you. |
 | [Lockpicking & doors](docs/lockpicking.md) | Players: tools, the three techniques, door classes, the door menu without tsp_breach. |
 | [Modules](docs/modules.md) | Mission makers: Eden modules for an area and Zeus modules for one explosive or door. |
-| [All settings](docs/settings.md) | Mission makers and server admins: every CBA setting with its default, range and effect, and the difficulty tables. |
+| [All settings](docs/settings.md) | Mission makers and server admins: every CBA setting and keybind with its default, range and effect, and the difficulty tables. |
 | [Changelog](CHANGELOG.md) | Everyone: what changed in each version. |
 | [How it works](docs/how-it-works.md) | Developers: how ACE is hooked, how devices and locks are generated, synced and drawn, how tsp_breach is taken over. |
 
@@ -135,6 +165,9 @@ its default and its range: [All settings](docs/settings.md).
 - **[Breach - Rewrite](https://steamcommunity.com/sharedfiles/filedetails/?id=3283645995) (tsp_breach):** detected automatically. Its door actions and locking stay in
   charge, and its lockpicking opens this board. Without it, the built-in door
   system takes over. The two never run at the same time.
+- **[Zeus Enhanced](https://steamcommunity.com/workshop/filedetails/?id=1779063631):**
+  detected automatically. Without it, only the Zeus modules and context menu
+  entries are missing.
 - Lock state uses the vanilla `bis_disabled_Door_N` variables, so missions and
   other scripts that lock doors work with it.
 
@@ -148,8 +181,9 @@ modify it or publish derivative works. See [`LICENSE`](LICENSE).
 ## Credits
 
 Made by **TLB MilSim**. All code, textures and icons are original work; textures
-are generated by the scripts in `tools/`. ACE3 and CBA_A3 are used through their
-public APIs only, and no code or assets from other mods are included.
+are generated by the scripts in `tools/`. ACE3, CBA_A3 and Zeus Enhanced are used
+through their public APIs only, and no code or assets from other mods are
+included.
 
 Inspired by [IEDD Notebook](https://steamcommunity.com/sharedfiles/filedetails/?id=3048818056) and [Advanced IED System](https://steamcommunity.com/sharedfiles/filedetails/?id=2954190544),
 which showed how much more fun hands-on IED work is than a progress bar. No code

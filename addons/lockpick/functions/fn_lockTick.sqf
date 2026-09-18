@@ -28,17 +28,22 @@ private _houseChance = missionNamespace getVariable ["tlbi_lockpick_lockHouses",
 private _doorChance = missionNamespace getVariable ["tlbi_lockpick_lockDoors", 0.5];
 
 if (_houseChance <= 0 || {_doorChance <= 0} || {isNull player}) exitWith {};
-if (vehicle player != player) exitWith {};
 
-// The door system only matters while the player is on foot. Avoid repeating the
-// 100 m spatial query while stationary; the 40 m threshold still leaves 60 m of
-// overlap between scan radii.
+// Avoid repeating the 100 m spatial query while the player stays in the same
+// area, but keep a time fallback so dynamically spawned buildings are picked up.
+// The 40 m movement threshold still leaves 60 m of overlap between scan radii.
 private _scanPos = getPosATL player;
 private _lastScanPos = missionNamespace getVariable ["tlbi_lockpick_lastScanPos", []];
+private _now = diag_tickTime;
+private _lastScanTime = missionNamespace getVariable ["tlbi_lockpick_lastScanTime", -1];
 
-if !(_lastScanPos isEqualTo [] || {_scanPos distance2D _lastScanPos >= 40}) exitWith {};
+private _moved = _lastScanPos isEqualTo [] || {_scanPos distance2D _lastScanPos >= 40};
+private _timedOut = _lastScanTime < 0 || {_now - _lastScanTime >= 30};
+
+if !(_moved || _timedOut) exitWith {};
 
 missionNamespace setVariable ["tlbi_lockpick_lastScanPos", _scanPos];
+missionNamespace setVariable ["tlbi_lockpick_lastScanTime", _now];
 
 // Blacklist changes are rare compared to lock ticks. Cache the normalized list
 // and rebuild it only when the underlying CBA setting changes.

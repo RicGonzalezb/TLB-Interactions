@@ -2,7 +2,7 @@
 /*
  * Author: TLB
  * Locks doors around the player, when tsp_breach is not loaded to do it. Runs
- * every two seconds from fn_postInit.
+ * every three seconds from fn_postInit.
  *
  * There is no map-wide pass at mission start. The server picks one seed per
  * mission; each client rolls the buildings near it from that seed, the
@@ -28,8 +28,31 @@ private _houseChance = missionNamespace getVariable ["tlbi_lockpick_lockHouses",
 private _doorChance = missionNamespace getVariable ["tlbi_lockpick_lockDoors", 0.5];
 
 if (_houseChance <= 0 || {_doorChance <= 0} || {isNull player}) exitWith {};
+if (vehicle player != player) exitWith {};
 
-private _blacklist = ((missionNamespace getVariable ["tlbi_lockpick_lockBlacklist", ""]) splitString (", ;" + toString [9, 10, 13])) apply {toLower _x};
+// The door system only matters while the player is on foot. Avoid repeating the
+// 100 m spatial query while stationary; the 40 m threshold still leaves 60 m of
+// overlap between scan radii.
+private _scanPos = getPosATL player;
+private _lastScanPos = missionNamespace getVariable ["tlbi_lockpick_lastScanPos", []];
+
+if !(_lastScanPos isEqualTo [] || {_scanPos distance2D _lastScanPos >= 40}) exitWith {};
+
+missionNamespace setVariable ["tlbi_lockpick_lastScanPos", _scanPos];
+
+// Blacklist changes are rare compared to lock ticks. Cache the normalized list
+// and rebuild it only when the underlying CBA setting changes.
+private _blacklistRaw = missionNamespace getVariable ["tlbi_lockpick_lockBlacklist", ""];
+
+if (
+    isNil "tlbi_lockpick_lockBlacklistCacheSource"
+    || {tlbi_lockpick_lockBlacklistCacheSource != _blacklistRaw}
+) then {
+    tlbi_lockpick_lockBlacklistCacheSource = _blacklistRaw;
+    tlbi_lockpick_lockBlacklistCache = (_blacklistRaw splitString (", ;" + toString [9, 10, 13])) apply {toLower _x};
+};
+
+private _blacklist = missionNamespace getVariable ["tlbi_lockpick_lockBlacklistCache", []];
 
 {
     private _house = _x;
